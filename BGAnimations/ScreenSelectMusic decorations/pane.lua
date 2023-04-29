@@ -347,6 +347,74 @@ end;
 
 if not GAMESTATE:IsCourseMode() then
 
+
+
+-- t[#t+1]=LoadActor("mask")..{
+	
+	-- OnCommand=cmd(draworder,-500;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y;zoom,0.667;diffusealpha,0;linear,0.25;diffusealpha,1;x,SCREEN_CENTER_X;blend,'BlendMode_NoEffect';zwrite,true;clearzbuffer,false;);
+	-- OffCommand=cmd(linear,0.5;diffusealpha,0;x,SCREEN_CENTER_X+100;);
+	-- };
+	
+	
+-- t[#t+1] = Def.ActorFrame {
+ 	-- InitCommand=cmd(ztest,true;zoom,5.06;x,SCREEN_CENTER_X-290;y,SCREEN_CENTER_Y-75;blend,'BlendMode_Add';diffusealpha,0;linear,0.25;diffusealpha,0.25;);
+	-- OffCommand=cmd(linear,0.25;diffusealpha,0;);
+	-- Def.Banner {
+		-- OnCommand=cmd();
+		-- SetCommand=function(self)
+		-- if not GAMESTATE:IsCourseMode() then
+		-- local song = GAMESTATE:GetCurrentSong();
+				-- if song then
+					-- if song:HasJacket() then
+						-- self:diffusealpha(1);
+						-- self:LoadBackground(song:GetJacketPath());
+						-- self:zoomtowidth(130);
+						-- self:zoomtoheight(130);					
+					-- elseif song:HasBackground() then
+						-- self:diffusealpha(1);
+						-- self:LoadFromSongBackground(GAMESTATE:GetCurrentSong());
+						-- self:zoomtowidth(130);
+						-- self:zoomtoheight(130);							
+					-- else
+						-- self:Load(THEME:GetPathG("","Common fallback jacket"));
+						-- self:zoomtowidth(130);
+						-- self:zoomtoheight(130);							
+					-- end;
+				-- elseif SCREENMAN:GetTopScreen():GetNextScreenName()=="ScreenStageInformation" 
+				-- and SCREENMAN:GetTopScreen():GetPrevScreenName()~="ScreenSelectMusic" then
+						-- local selgrp =SCREENMAN:GetTopScreen():GetMusicWheel():GetSelectedSection();
+						-- if not GAMESTATE:GetCurrentSong() then
+							-- myLoadGroupJacket(selgrp, self);
+							-- self:zoomtowidth(130);
+							-- self:zoomtoheight(130);	
+							-- self:stoptweening();
+						-- else
+							-- self:Load(THEME:GetPathG("","Common fallback jacket"));
+							-- self:zoomtowidth(130);
+							-- self:zoomtoheight(130);	
+							-- self:stoptweening();							
+						-- end;
+				-- else
+						-- self:diffusealpha(1);
+						-- self:Load(THEME:GetPathG("","Common fallback jacket"));
+						-- self:zoomtowidth(130);
+						-- self:zoomtoheight(130);							
+				-- end;
+		-- else
+			-- local course = GAMESTATE:GetCurrentCourse();
+			-- if course then
+				-- self:x(SCREEN_CENTER_X+0);
+				-- self:LoadFromCourse(GAMESTATE:GetCurrentCourse());
+						-- self:zoomtowidth(304);
+						-- self:zoomtoheight(304);				
+			-- end;
+		-- end;
+		-- self:stoptweening();
+		-- end;
+		-- CurrentSongChangedMessageCommand=cmd(playcommand,"Set");
+		-- };
+-- };
+
 t[#t+1]=LoadActor("songtitlebg")..{
 	
 	OnCommand=cmd(draworder,-500;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y;zoom,0.667;diffusealpha,0;linear,0.25;diffusealpha,1;x,SCREEN_CENTER_X;);

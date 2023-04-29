@@ -7,6 +7,50 @@ local group;
 
 local t = Def.ActorFrame {
 
+
+
+Def.Sprite {
+		Name="BannerBG";
+		InitCommand=cmd(addx,60;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
+		BackgroundCommand=cmd(scaletoclipped,60,60;zoom,9;);
+		BannerCommand=cmd(scaletoclipped,60,60;zoom,9;);
+		JacketCommand=cmd(scaletoclipped,60,60;zoom,9;);
+		SetMessageCommand=function(self,params)
+			local Song = params.Song;
+			local Course = params.Course;
+			if Song then
+				if ( Song:GetJacketPath() ~=  nil ) and ( bAllowJackets ) then
+					self:Load( Song:GetJacketPath() );
+					self:playcommand("Jacket");
+				elseif ( Song:GetBackgroundPath() ~= nil ) then
+					self:Load( Song:GetBackgroundPath() );
+					self:playcommand("Background");
+				elseif ( Song:GetBannerPath() ~= nil ) and ( bAllowJackets ) then
+					self:Load( Song:GetBannerPath() );
+					self:playcommand("Banner");
+				else
+				  self:Load( bAllowJackets and sBannerPath or sJacketPath );
+				  self:playcommand( bAllowJackets and "Jacket" or "Banner" );
+				end;
+			elseif Course then
+				if ( Course:GetBackgroundPath() ~= nil ) and ( bAllowJackets ) then
+					self:Load( Course:GetBackgroundPath() );
+					self:playcommand("Jacket");
+				elseif ( Course:GetBannerPath() ~= nil ) then
+					self:Load( Course:GetBannerPath() );
+					self:playcommand("Banner");
+				else
+					self:Load( sJacketPath );
+					self:playcommand( bAllowJackets and "Jacket" or "Banner" );
+				end
+			else
+				self:Load( bAllowJackets and sJacketPath or sBannerPath );
+				self:playcommand( bAllowJackets and "Jacket" or "Banner" );
+			end;
+		end;
+	};
+
+
 	LoadActor(THEME:GetPathG("MusicWheelItem", "ModeItem")) .. {
 };
 
@@ -18,13 +62,6 @@ local t = Def.ActorFrame {
 	OnCommand=cmd(x,-168;zoom,0.71;);
 	};
 
-
-
-	LoadActor( "mask" )..{
-		InitCommand=cmd(zoom,0.137;);
-		OnCommand=cmd(x,-210;blend,'BlendMode_NoEffect';zwrite,true;clearzbuffer,false;);
-		OffCommand=cmd();
-	};
 --banner
 	Def.Sprite {
 		Name="Banner";
