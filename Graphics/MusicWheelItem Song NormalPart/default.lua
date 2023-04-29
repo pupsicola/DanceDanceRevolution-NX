@@ -11,10 +11,10 @@ local t = Def.ActorFrame {
 
 Def.Sprite {
 		Name="BannerBG";
-		InitCommand=cmd(addx,60;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
-		BackgroundCommand=cmd(scaletoclipped,60,60;zoom,9;);
-		BannerCommand=cmd(scaletoclipped,60,60;zoom,9;);
-		JacketCommand=cmd(scaletoclipped,60,60;zoom,9;);
+		InitCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
+		BackgroundCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
+		BannerCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
+		JacketCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
 		SetMessageCommand=function(self,params)
 			local Song = params.Song;
 			local Course = params.Course;
@@ -51,8 +51,7 @@ Def.Sprite {
 	};
 
 
-	LoadActor(THEME:GetPathG("MusicWheelItem", "ModeItem")) .. {
-};
+	LoadActor(THEME:GetPathG("MusicWheelItem", "ModeItem")) .. {};
 
 	LoadActor("diff1") .. {
 	OnCommand=cmd(x,-211;y,46;zoom,0.5);
