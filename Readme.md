@@ -4,6 +4,8 @@ DanceDanceRevolution NX is a Stepmania theme based off the excellent DDR A theme
 
 This theme is still a work in progress.
 
+There are several minor file name errors that are in the present build that won't be in the final release. I'd recommend using the theme in full screen for the time being to avoid these errors.
+
 As of now and probably for a while going forward, the theme only supports single play event mode. 2 player and doubles might be implemented in the future but it would probably take a while as everything so far has been tailored towards a single player, single pad experience.
 
 There is a decent amount of polish I'd still like to add, particularly in ScreenStageInformation and possibly the transition/attract screens and profile select.
