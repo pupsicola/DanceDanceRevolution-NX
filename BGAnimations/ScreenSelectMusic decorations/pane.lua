@@ -722,15 +722,18 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px") ..{
 					local groupName = TranslateGroupName(selgrp);
 				
 					self:settext(groupName);
+					self:rainbowscroll(false);
 					self:stoptweening();
 					
 					
 					
 				elseif seltype == "WheelItemDataType_Roulette" then
 					self:settext("Roulette");
+					self:rainbowscroll(true);
 					self:stoptweening();
 				elseif seltype == "WheelItemDataType_Random" then
 					self:settext("Random");
+					self:rainbowscroll(true);
 					self:stoptweening();
 				elseif seltype == "WheelItemDataType_Portal" then
 					self:settext("PORTAL");
