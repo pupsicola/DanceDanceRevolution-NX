@@ -668,7 +668,7 @@ t[#t+1]=LoadActor("_SSM_radarScanLine")..{
 
 t[#t+1]=LoadActor("LabelGroove")..{
 	
-	OnCommand=cmd(x,SCREEN_CENTER_X-69-435;y,SCREEN_CENTER_Y+207-22;zoom,0.9;diffusealpha,0;linear,0.5;diffusealpha,0.5;);
+	OnCommand=cmd(x,SCREEN_CENTER_X-69-435;y,SCREEN_CENTER_Y+207-22;zoom,0.9;diffusealpha,0;linear,0.5;diffusealpha,1;);
 	OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	CurrentSongChangedMessageCommand=function(self)
 	local song = GAMESTATE:GetCurrentSong();

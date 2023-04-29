@@ -336,7 +336,7 @@ t[#t+1] = LoadFont("_helvetica-condensed-light 24px")..{
 				if (myScoreSet["SongOrCourse"]==1) then
 					if (myScoreSet["HasScore"]==1) then
 						self:settext( temp);
-						self:diffusealpha(1);
+						self:diffusealpha(0.5);
 					else
 						self:diffusealpha(0);
 					end
