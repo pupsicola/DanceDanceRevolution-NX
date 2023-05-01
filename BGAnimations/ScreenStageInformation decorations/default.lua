@@ -142,7 +142,26 @@ t[#t+1] = Def.ActorFrame {
 
 
 t[#t+1] = LoadActor("ScoreDispay")..{
-	OnCommand=cmd(zoom,1.1;y,-235;diffusealpha,0;addx,-210;decelerate,1;diffusealpha,1;addx,200;);
+	OnCommand=cmd(diffusealpha,0;zoom,1.1;y,-235;addx,-210;decelerate,1;playcommand,"Set";addx,200;);
+			SetCommand=function(self)
+				myScoreSet = TopRecord(PLAYER_1);
+				local temp = myScoreSet["topDate"];
+				if (myScoreSet["SongOrCourse"]==1) then
+					if (myScoreSet["HasScore"]==1) then
+						self:diffusealpha(1);
+					else
+						self:diffusealpha(0);
+					end
+				else
+					self:diffusealpha(0);
+				end
+			end;
+			CurrentSongChangedMessageCommand=cmd(queuecommand,"Set");
+			CurrentTrailP1ChangedMessageCommand=cmd(queuecommand,"Set");
+			CurrentStepsP1ChangedMessageCommand=cmd(queuecommand,"Set");
+			CurrentTrailP2ChangedMessageCommand=cmd(queuecommand,"Set");
+			CurrentStepsP2ChangedMessageCommand=cmd(queuecommand,"Set");
+			CurrentCourseChangedMessageCommand=cmd(queuecommand,"Set");
 };
 
 t[#t+1] = LoadActor("cd")..{

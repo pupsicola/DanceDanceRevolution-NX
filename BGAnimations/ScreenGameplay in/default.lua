@@ -22,6 +22,7 @@ t[#t+1] = LoadActor( "../_door/whiteflash" )..{
 			OnCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoom,1.5;linear,0.3;zoom,5);
 		};
 
+
 t[#t+1] = Def.ActorFrame {
 		LoadActor("rounded") .. {
 		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;draworder,500)
