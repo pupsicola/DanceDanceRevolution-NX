@@ -18,6 +18,12 @@ local Prefs =
 		Choices = { "On", "Off" },
 		Values = { "On", "Off" }
 	},
+	ScreenClock =
+	{
+		Default = "On",
+		Choices = { "On", "Off" },
+		Values = { "On", "Off" }
+	},
 }
 
 ThemePrefs.InitAll(Prefs)

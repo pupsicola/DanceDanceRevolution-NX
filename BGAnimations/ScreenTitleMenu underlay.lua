@@ -53,6 +53,9 @@ InitCommand=cmd();
 	};
 };
 
-t[#t+1] = StandardDecorationFromFileOptional("Clock","Clock");
+t[#t+1] = StandardDecorationFromFileOptional("Clock","Clock")..{
+InitCommand=cmd(visible,ThemePrefs.Get("ScreenClock") == "On");
+};
+
 
 return t

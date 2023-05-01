@@ -1,6 +1,8 @@
 local t = LoadFallbackB();
 
-t[#t+1] = StandardDecorationFromFileOptional("Clock","Clock");
+t[#t+1] = StandardDecorationFromFileOptional("Clock","Clock")..{
+InitCommand=cmd(visible,ThemePrefs.Get("ScreenClock") == "On");
+};
 
 t[#t+1] = LoadActor("p1result")..{
 		InitCommand=cmd(x,SCREEN_LEFT+30;y,SCREEN_CENTER_Y-224;player,PLAYER_1;zoom,1.5);

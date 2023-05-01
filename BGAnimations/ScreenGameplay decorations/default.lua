@@ -1,7 +1,6 @@
 local t = LoadFallbackB()
 
 
-
 local customscore=GetCustomScoreMode();
  local cscore="SuperNOVA2";
  if not GAMESTATE:IsCourseMode() then
@@ -48,7 +47,6 @@ local customscore=GetCustomScoreMode();
  };
  end;
  
-
 
 t[#t+1] = LoadActor("OptionsHack.lua")..{
 	InitCommand=cmd(draworder,1);

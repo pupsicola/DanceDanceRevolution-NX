@@ -1,6 +1,6 @@
 return Def.ActorFrame{
 	Def.ActorFrame{
-		InitCommand=cmd(player,PLAYER_1;x,-360;y,178.5);
+		InitCommand=cmd(player,PLAYER_1;x,-360;y,117.5);
 		LoadActor("1P_OK")..{
 			InitCommand=cmd(diffusealpha,0;zoomy,0);
 		--	ExitSelectedP1Command=cmd(stoptweening;bob;effectmagnitude,0,2,0;effectperiod,1;bounceend,0.2;diffusealpha,1;zoom,1);
