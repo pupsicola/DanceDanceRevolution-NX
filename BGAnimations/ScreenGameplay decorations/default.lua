@@ -66,7 +66,7 @@ end
 
 t[#t+1] = Def.BitmapText {
 		Font = "Common Condensed",
-		InitCommand=cmd(draworder,5;horizalign,left;x,260-132;y,650;zoom,0.5;shadowlength,1;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.5;),
+		InitCommand=cmd(draworder,5;horizalign,left;x,260-132;y,648;zoom,0.5;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.5;),
 		OnCommand=function(self)
 			self:settext(GAMESTATE:GetPlayerState(1):GetPlayerOptionsString(0))
 			end;		
@@ -74,7 +74,7 @@ t[#t+1] = Def.BitmapText {
 
 t[#t+1] = Def.BitmapText {
 		Font = "Common Condensed",
-		InitCommand=cmd(draworder,5;horizalign,left;x,160-115;y,650;zoom,0.5;shadowlength,1;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.75;),
+		InitCommand=cmd(draworder,5;horizalign,left;x,160-115;y,648;zoom,0.5;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.75;),
 		OnCommand=function(self)
 			self:settext("Song Options:")
 			end;	

@@ -2,9 +2,28 @@ local t = Def.ActorFrame{};
 
 --P1 ScoreFrame
 if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
-	t[#t+1] = LoadActor("normal")..{
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Default");
+		LoadActor("normal")..{
 		InitCommand=cmd(x,SCREEN_LEFT+270;y,SCREEN_CENTER_Y+292;zoom,0.75;);
 	}
+	};
+	
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Gold");
+		LoadActor("gold")..{
+		InitCommand=cmd(x,SCREEN_LEFT+270;y,SCREEN_CENTER_Y+292;zoom,0.75;);
+	}
+	};
+	
+	t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "A20 Blue");
+		LoadActor("a20blue")..{
+		InitCommand=cmd(x,SCREEN_LEFT+270;y,SCREEN_CENTER_Y+292;zoom,0.75;);
+	}
+	};
+	
+	
 
 
 --Meter BG in ScreenGamplay decorations

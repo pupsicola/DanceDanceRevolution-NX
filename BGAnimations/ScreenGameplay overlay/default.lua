@@ -18,13 +18,29 @@ t[#t+1] = Def.ActorFrame{
 
 };
 
-
-t[#t+1] = LoadActor("frame")..{
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Default");
+		LoadActor("frame")..{
 		InitCommand=cmd(x,SCREEN_LEFT+273;y,SCREEN_TOP+25;zoom,1;);
 		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
 };
+};
 
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Gold");
+		LoadActor("goldframe")..{
+		InitCommand=cmd(x,SCREEN_LEFT+273;y,SCREEN_TOP+25;zoom,1;);
+		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
+};
+};
 
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "A20 Blue");
+		LoadActor("a20frame")..{
+		InitCommand=cmd(x,SCREEN_LEFT+273;y,SCREEN_TOP+25;zoom,1;);
+		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
+};
+};
 
 
 for pn in ivalues(GAMESTATE:GetHumanPlayers()) do

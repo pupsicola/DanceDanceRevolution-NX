@@ -42,6 +42,12 @@ local Prefs =
 		Choices = { "On", "Off" },
 		Values = { "On", "Off" }
 	},
+	FrameStyle=
+	{
+		Default = "Default",
+		Choices = { "Default", "Gold", "A20 Blue"},
+		Values = { "Default", "Gold", "A20 Blue" }
+	},
 }
 
 ThemePrefs.InitAll(Prefs)
