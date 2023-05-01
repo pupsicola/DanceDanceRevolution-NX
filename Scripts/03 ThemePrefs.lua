@@ -1,4 +1,7 @@
 -- sm-ssc Default Theme Preferences Handler
+local function OptionNameString(str)
+	return THEME:GetString('OptionNames',str)
+end
 
 -- Example usage of new system (not really implemented yet)
 local Prefs =
@@ -9,11 +12,11 @@ local Prefs =
 		Choices = { "ON", "OFF" },
 		Values = { true, false }
 	},
-	FancyUIBG =
+	NXBG =
 	{
-		Default = false,
-		Choices = { "Off", "On" },
-		Values = { false, true }
+		Default = "On",
+		Choices = { "On", "Off" },
+		Values = { "On", "Off" }
 	},
 }
 
@@ -239,89 +242,6 @@ end
 
 
 
-function OptionRowAssistClapUseFile()
-	local t = {
-		Name="AssistClap",
-		LayoutType = "ShowAllInRow",
-		SelectType = "SelectOne",
-		OneChoiceForAllPlayers = false,
-		ExportOnChange = true,
-		Choices = { "Off", 'Clap', 'Metronome', 'Both', },
-		LoadSelections = function(self, list, pn)
-			local AssistClapValue = "Clap";
-			local pf = PROFILEMAN:GetProfile(pn);
-			local PlayerUID = "";
-			
-			if pf then 
-				PlayerUID = pf:GetGUID()  
-				AssistClapValue = ReadOrCreateAssistClapValueForPlayer(PlayerUID,AssistClapValue);
-			else
-				PlayerUID = "UnknownPlayerUID"
-				AssistClapValue = "Clap";
-			end
-			
-			if AssistClapValue ~= nil then
-				if AssistClapValue == "Off" then
-					list[1] = true
-				elseif AssistClapValue == "Clap" then
-					list[2] = true
-				elseif AssistClapValue == "Metronome" then
-					list[3] = true
-				elseif AssistClapValue == "Both" then
-					list[4] = true
-				else
-					list[2] = true
-				end
-			else
-				SaveAssistClapValueForPlayer(PlayerUID,"Clap")
-				list[2] = true
-			end
-			
-		end,
-		SaveSelections = function(self, list, pn)
-			local pName = ToEnumShortString(pn)
-			local found = false
-			local PlayerUID = "";
-			local pf = PROFILEMAN:GetProfile(pn);
-			
-			if pf then 
-				PlayerUID = pf:GetGUID()  
-			else
-				PlayerUID = "UnknownPlayerUID"
-			end
-			
-			for i=1,#list do
-				if not found then
-					if list[i] == true then
-						local val = "Clap";
-						if i==1 then
-							val = "Off";
-						elseif i==3 then
-							val = "Metronome";
-						elseif i==4 then
-							val = "Both";
-						else
-							val = "Clap";
-						end
-						setenv("AssistClap"..pName,val)
-						SaveAssistClapValueForPlayer(PlayerUID,val)
-						found = true
-						break;
-					end
-				end
-			end
-		end,
-	};
-	setmetatable(t, t)
-	return t
-end
-
-
-
-
-
-
-
 function ReadOrCreateScreenFilterValueForPlayer(PlayerUID, MyValue)
 	local FilterFile = RageFileUtil:CreateRageFile()
 	if FilterFile:Open("Save/ScreenFilter/"..PlayerUID..".txt",1) then 
@@ -516,41 +436,39 @@ function UserPrefGameplayShowScore()
 	return t
 end
 
-function OptionRowGuideLines()
+--GameplayShowCalories
+function UserPrefGameplayShowCalories()
 	local t = {
-		Name = "GuideLines";
-		LayoutType = "ShowAllInRow";
-		SelectType = "SelectOne";
-		OneChoiceForAllPlayers = true;
-		ExportOnChange = true;
-		Choices = {"Off", "On", };
+		Name = "UserPrefGameplayShowCalories",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+		ExportOnChange = false,
+		Choices = {
+			THEME:GetString('OptionNames','Off'),
+			THEME:GetString('OptionNames','On')
+		},
 		LoadSelections = function(self, list, pn)
-			if ReadPrefFromFile("OptionRowGuideLines") ~= nil then
-				if GetUserPref("OptionRowGuideLines")=='true' then
+			if ReadPrefFromFile("UserPrefGameplayShowCalories") ~= nil then
+				if GetUserPrefB("UserPrefGameplayShowCalories") then
 					list[2] = true
-				elseif GetUserPref("OptionRowGuideLines")=='false' then
-					list[1] = true
 				else
-					list[2] = true
+					list[1] = true
 				end
 			else
-				WritePrefToFile("OptionRowGuideLines",true);
-				list[2] = true;
-			end;
-		end;
+				WritePrefToFile("UserPrefGameplayShowCalories", false)
+				list[1] = true
+			end
+		end,
 		SaveSelections = function(self, list, pn)
-			if list[2] then
-				WritePrefToFile("OptionRowGuideLines",true);
-			elseif list[1] then
-				WritePrefToFile("OptionRowGuideLines",false);
-			else
-				WritePrefToFile("OptionRowGuideLines",true);
-			end;
-			THEME:ReloadMetrics();
-		end;
-	};
-	setmetatable( t, t );
-	return t;
+			local val = list[2] and true or false
+			WritePrefToFile("UserPrefGameplayShowCalories", val)
+			MESSAGEMAN:Broadcast("PreferenceSet", { Message == "Set Preference" })
+			THEME:ReloadMetrics()
+		end
+	}
+	setmetatable(t, t)
+	return t
 end
 
 --GameplayShowFastSlow
@@ -882,7 +800,39 @@ function UserPrefComboUnderField()
 	return t;
 end
 
-
+function UserPrefFancyUIBG()
+	local t = {
+		Name = "UserPrefFancyUIBG",
+		LayoutType = "ShowAllInRow",
+		SelectType = "SelectOne",
+		OneChoiceForAllPlayers = true,
+		ExportOnChange = false,
+		Choices = {
+			THEME:GetString('OptionNames','On'),
+			THEME:GetString('OptionNames','Off')
+		},
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("UserPrefFancyUIBG") ~= nil then
+				if GetUserPrefB("UserPrefFancyUIBG") then
+					list[1] = true
+				else
+					list[2] = true
+				end
+			else
+				WritePrefToFile("UserPrefFancyUIBG", true)
+				list[1] = true
+			end
+		end,
+		SaveSelections = function(self, list, pn)
+			local val = list[1] and true or false
+			WritePrefToFile("UserPrefFancyUIBG", val)
+			MESSAGEMAN:Broadcast("PreferenceSet", { Message == "Set Preference" })
+			THEME:ReloadMetrics()
+		end
+	}
+	setmetatable(t, t)
+	return t
+end
 
 function UserPrefTimingDisplay()
 	local t = {

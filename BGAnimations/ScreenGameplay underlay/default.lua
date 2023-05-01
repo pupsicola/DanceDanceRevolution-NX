@@ -1,9 +1,8 @@
-local hideFancyElements = (ThemePrefs.Get("FancyUIBG") == false)
 local t = Def.ActorFrame{};
-if hideFancyElements then return t; end
 
-if ThemePrefs.Get("FancyUIBG") then
-	return Def.ActorFrame {
+t[#t+1] = Def.ActorFrame {
+	InitCommand=cmd(visible,ThemePrefs.Get("NXBG") == "On");
+		Def.ActorFrame {
 	
 		LoadActor("blackbg") .. {
 			OnCommand=cmd(zoom,1.3;Center;)
@@ -96,14 +95,8 @@ if ThemePrefs.Get("FancyUIBG") then
 		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
 		};
 
-		LoadActor("ScreenFilter");
-		LoadActor("../ScreenGameplay Danger");
-	}
-else
-	return 	LoadActor(THEME:GetPathG("common bg", "base")) .. {
-		InitCommand=cmd(Center;zoom,0;)
-	}
-end
+	};
+};
 
 t[#t+1] = LoadActor("ScreenFilter");
 
