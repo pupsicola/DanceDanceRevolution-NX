@@ -7,7 +7,7 @@ return Def.ActorFrame {
 	};
 	
 	LoadActor( "OptionsLabels" )..{
-		InitCommand=cmd(visible,GAMESTATE:IsHumanPlayer(PLAYER_1);x,SCREEN_CENTER_X-310-100+166-134+30-50-10;y,SCREEN_CENTER_Y-50+10-10;draworder,1;zoom,0.5;);
+		InitCommand=cmd(visible,GAMESTATE:IsHumanPlayer(PLAYER_1);x,SCREEN_CENTER_X-310-100+166-134+30-50-10;y,SCREEN_CENTER_Y-18;draworder,1;zoom,0.5;);
 		OnCommand=cmd(addx,-400;linear,0.125;addx,400);
 		OffCommand=cmd(linear,0.25;addx,-500);
 	};

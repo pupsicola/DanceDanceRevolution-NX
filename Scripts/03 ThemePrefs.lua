@@ -9,6 +9,12 @@ local Prefs =
 		Choices = { "ON", "OFF" },
 		Values = { true, false }
 	},
+	FancyUIBG =
+	{
+		Default = false,
+		Choices = { "Off", "On" },
+		Values = { false, true }
+	},
 }
 
 ThemePrefs.InitAll(Prefs)
@@ -876,39 +882,7 @@ function UserPrefComboUnderField()
 	return t;
 end
 
-function UserPrefFancyUIBG()
-	local t = {
-		Name = "UserPrefFancyUIBG",
-		LayoutType = "ShowAllInRow",
-		SelectType = "SelectOne",
-		OneChoiceForAllPlayers = true,
-		ExportOnChange = false,
-		Choices = {
-			THEME:GetString('OptionNames','On'),
-			THEME:GetString('OptionNames','Off')
-		},
-		LoadSelections = function(self, list, pn)
-			if ReadPrefFromFile("UserPrefFancyUIBG") ~= nil then
-				if GetUserPrefB("UserPrefFancyUIBG") then
-					list[1] = true
-				else
-					list[2] = true
-				end
-			else
-				WritePrefToFile("UserPrefFancyUIBG", true)
-				list[1] = true
-			end
-		end,
-		SaveSelections = function(self, list, pn)
-			local val = list[1] and true or false
-			WritePrefToFile("UserPrefFancyUIBG", val)
-			MESSAGEMAN:Broadcast("PreferenceSet", { Message == "Set Preference" })
-			THEME:ReloadMetrics()
-		end
-	}
-	setmetatable(t, t)
-	return t
-end
+
 
 function UserPrefTimingDisplay()
 	local t = {
