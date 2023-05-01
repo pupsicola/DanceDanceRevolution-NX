@@ -325,7 +325,7 @@ function TopRecord(pn) --回傳最高分的那個紀錄
 end;
 
 t[#t+1] = LoadFont("_helvetica-condensed-light 24px")..{
-			InitCommand=cmd(shadowlength,0;zoom,0.48;maxwidth,215;x,SCREEN_CENTER_X-30+offsetx;y,SCREEN_CENTER_Y+174;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlength,0;zoom,0.48;maxwidth,215;cropright,0.5;x,SCREEN_CENTER_X+15+offsetx;y,SCREEN_CENTER_Y+175;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)

@@ -142,7 +142,7 @@ t[#t+1] = Def.ActorFrame {
 
 
 t[#t+1] = LoadActor("ScoreDispay")..{
-	OnCommand=cmd(y,-200;diffusealpha,0;addx,-200;decelerate,1;diffusealpha,1;addx,200;);
+	OnCommand=cmd(zoom,1.1;y,-235;diffusealpha,0;addx,-210;decelerate,1;diffusealpha,1;addx,200;);
 };
 
 t[#t+1] = LoadActor("cd")..{

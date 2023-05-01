@@ -347,17 +347,8 @@ end;
 
 if not GAMESTATE:IsCourseMode() then
 
-
-
-t[#t+1]=LoadActor("mask")..{
-	InitCommand=cmd(croptop,0.25;cropbottom,0.25;);
-	OnCommand=cmd(draworder,-500;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y;zoom,0.667;diffusealpha,0;linear,0.25;diffusealpha,1;x,SCREEN_CENTER_X;blend,'BlendMode_NoEffect';zwrite,true;clearzbuffer,false;);
-	OffCommand=cmd(linear,0.5;diffusealpha,0;x,SCREEN_CENTER_X+100;);
-	};
-	
-	
 t[#t+1] = Def.ActorFrame {
- 	InitCommand=cmd(ztest,true;zoom,5.06;x,SCREEN_CENTER_X-290;y,SCREEN_CENTER_Y-75;blend,'BlendMode_Add';diffusealpha,0;linear,0.25;diffusealpha,0.3;);
+ 	InitCommand=cmd(zoom,5.06;x,SCREEN_CENTER_X-290;y,SCREEN_CENTER_Y-75;diffusealpha,0;linear,0.25;diffusealpha,0.5;);
 	OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	Def.Banner {
 		OnCommand=cmd();

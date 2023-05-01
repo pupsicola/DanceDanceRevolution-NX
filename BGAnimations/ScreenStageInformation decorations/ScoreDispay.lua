@@ -106,7 +106,7 @@ t[#t+1]=Def.ActorFrame{
 };
 	--FC Ring
 	LoadActor(THEME:GetPathG("StageIn","Spin FullCombo"))..{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.25;shadowlength,1;x,SCREEN_LEFT+167-OffsetX;y,SCREEN_CENTER_Y+190;horizalign,center;draworder,2;);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.25;shadowlength,1;x,SCREEN_LEFT+160-OffsetX;y,SCREEN_CENTER_Y+189;horizalign,center;draworder,2;);
 	OnCommand=function(self)
 			local SongOrCourse, StepsOrTrail;
 			if GAMESTATE:IsCourseMode() then
@@ -164,17 +164,17 @@ t[#t+1]=Def.ActorFrame{
 												self:diffuse(GameColor.Judgment["JudgmentLine_W1"]);
 												self:glowblink();
 												self:effectperiod(0.20);
-												self:zoom(0.25);
+												self:zoom(0.18);
 												break;
 										elseif goods+greats == 0 then
 												self:diffuse(GameColor.Judgment["JudgmentLine_W2"]);
 												--self:glowshift();
-												self:zoom(0.25);
+												self:zoom(0.18);
 												break;
 										elseif (misses+boos+goods) == 0 then
 												self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W3"],0.75));
 												self:stopeffect();
-												self:zoom(0.25);
+												self:zoom(0.18);
 												if i==1 then
 													self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W3"],1));
 												end;
@@ -182,7 +182,7 @@ t[#t+1]=Def.ActorFrame{
 										elseif (misses+boos) == 0 then
 												self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W4"],0.75));
 												self:stopeffect();
-												self:zoom(0.25);
+												self:zoom(0.18);
 												if i==1 then
 													self:diffuse(BoostColor(GameColor.Judgment["JudgmentLine_W4"],1));
 												end;
@@ -205,12 +205,12 @@ t[#t+1]=Def.ActorFrame{
 			else
 				self:diffusealpha(0);
 			end;
-			(cmd(x,SCREEN_LEFT+OffsetX+167))(self);
+			(cmd(x,SCREEN_LEFT+OffsetX+164-87))(self);
 		end;
 	};
 	
 	Def.Quad{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlength,1;x,SCREEN_LEFT+135-OffsetX;y,SCREEN_CENTER_Y+188;horizalign,center;draworder,2;);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlength,1;y,SCREEN_CENTER_Y+188;horizalign,center;draworder,2;);
 
 		OnCommand=function(self)
 			local SongOrCourse, StepsOrTrail;
@@ -282,13 +282,13 @@ t[#t+1]=Def.ActorFrame{
 				self:diffusealpha(0);
 			end;
 			
-			(cmd(x,SCREEN_LEFT+OffsetX+135+10))(self);
+			(cmd(x,SCREEN_LEFT+OffsetX+135-75))(self);
 		end;
 	};
 	
 	Def.RollingNumbers { -- Topscore
 			File = THEME:GetPathF("_sf pro rounded","24px");
-			InitCommand=cmd(shadowlength,0;zoom,0.75;maxwidth,240;x,SCREEN_LEFT-OffsetX-40+30;y,SCREEN_CENTER_Y+188;horizalign,center;);
+			InitCommand=cmd(shadowlength,0;zoom,1;y,SCREEN_CENTER_Y+190;horizalign,center;);
 			OnCommand=function(self)
 				if GAMESTATE:IsCourseMode() then
 					self:Load("RollingNumbersCourseData");
@@ -313,15 +313,15 @@ t[#t+1]=Def.ActorFrame{
 				else
 					self:diffusealpha(0);
 				end
-				(cmd(x,SCREEN_LEFT+OffsetX-40+67))(self);
+				(cmd(x,SCREEN_LEFT+OffsetX-35))(self);
 			end;
 };	
 
 LoadFont("Common Normal") .. {
 	Text=PROFILEMAN:GetProfile(PLAYER_1):GetDisplayName();
-	InitCommand=cmd(maxwidth,300;zoom,0.75;x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+220;horizalign,center;);
+	InitCommand=cmd(maxwidth,300;zoom,0.75;x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+225;horizalign,center;);
 	OnCommand=function(self)
-		(cmd(x,SCREEN_LEFT+OffsetX-113))(self);
+		(cmd(x,SCREEN_LEFT+OffsetX-113+110))(self);
 	end;
 };
 
@@ -584,9 +584,9 @@ if not GAMESTATE:IsCourseMode() then --Difficulty
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(maxwidth,240;zoom,0.75;x,SCREEN_LEFT-OffsetX-125+25;y,SCREEN_CENTER_Y+188;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(maxwidth,240;zoom,0.75;y,SCREEN_CENTER_Y+153.5;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
-			(cmd(x,SCREEN_LEFT+OffsetX-125+13))(self);
+			(cmd(x,SCREEN_LEFT+OffsetX-125+120))(self);
 		end;
 	};
 

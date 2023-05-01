@@ -390,8 +390,8 @@ function LoadPlayerStuff(Player)
 	if (Player == PLAYER_1) then
 		t[#t+1] = LoadActor( THEME:GetPathG("ScreenSelectProfile", "GrooveRadarP1_Single" ),1,0.2,0.2,0.2,0.5)..{
 			Name = "GVRD1S";
-			InitCommand=cmd(x,0;y,99-16+29;zoom,0.56;diffusealpha,0;diffuse,color("white"));
-			OnCommand=cmd(zoom,0.56);
+			InitCommand=cmd(x,0;y,99-16+29;diffusealpha,0;diffuse,color("white"));
+			OnCommand=cmd(zoom,1);
 			OffCommand=cmd(linear,0.25;diffusealpha,0);
 		};
 		t[#t+1]=LoadFont("Common Normal") .. {
