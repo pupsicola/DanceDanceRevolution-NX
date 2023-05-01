@@ -19,7 +19,7 @@ t[#t+1] = LoadActor("cdbg")..{
 
 
 t[#t+1]=Def.ActorFrame{
-	InitCommand=cmd(visible,ThemePrefs.Get("TargetScore") == "On");
+	InitCommand=cmd(visible,ThemePrefs.Get("TargetScore") == "Off");
 	LoadActor("TargetScore")..{
 	InitCommand=cmd(x,-250;zoom,1;diffusealpha,0;);
 			OnCommand=function(self)
