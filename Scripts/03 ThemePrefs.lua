@@ -24,6 +24,18 @@ local Prefs =
 		Choices = { "On", "Off" },
 		Values = { "On", "Off" }
 	},
+	SlowFast =
+	{
+		Default = "On",
+		Choices = { "On", "Off" },
+		Values = { "On", "Off" }
+	},
+	NowPlayingOverlay=
+	{
+		Default = "On",
+		Choices = { "Large", "Small" },
+		Values = { "On", "Off" }
+	},
 }
 
 ThemePrefs.InitAll(Prefs)

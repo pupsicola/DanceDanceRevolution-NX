@@ -48,6 +48,7 @@ local TNSFrames = {
 
 local t = Def.ActorFrame {};
 t[#t+1] = Def.ActorFrame {
+	InitCommand=cmd(visible,ThemePrefs.Get("SlowFast") == "On");
 	LoadActor("deviation")..{
 		InitCommand=function(s) s:diffusealpha(0):animate(false):x(80) end,
 		JudgmentMessageCommand=function(self, params)
@@ -80,6 +81,8 @@ t[#t+1] = Def.ActorFrame {
 		end;
 		AnimateCommand=cmd(diffusealpha,1;zoom,0.45;linear,0.05;zoom,0.3;sleep,0.5;linear,0.05;zoomy,0;);
 	};
+};
+t[#t+1] = Def.ActorFrame {
 	LoadActor(THEME:GetPathG("Judgment","Normal")) .. {
 		Name="Judgment";
 		InitCommand=cmd(pause;visible,false);

@@ -82,9 +82,17 @@ t[#t+1] = Def.BitmapText {
 
 --JacketBG
 t[#t+1] = Def.ActorFrame{
-	InitCommand=cmd();
+	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "On");
 	LoadActor("cd")..{
 	InitCommand=cmd(x,SCREEN_CENTER_X+240;y,SCREEN_CENTER_Y;zoom,1.1;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
+	OnCommand=cmd(sleep,5;linear,0.2;diffusealpha,1);
+};
+};
+
+t[#t+1] = Def.ActorFrame{
+	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "Off");
+	LoadActor("cd")..{
+	InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-270;zoom,0.3;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
 	OnCommand=cmd(sleep,5;linear,0.2;diffusealpha,1);
 };
 };
