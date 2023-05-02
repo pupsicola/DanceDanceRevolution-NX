@@ -219,19 +219,19 @@ function LoadPlayerStuff(Player)
 
 --PLAYER NAME
 	
-	t[#t+1] = LoadFont("_sf pro rounded 50px") .. {
+	t[#t+1] = LoadFont("_@fot-newrodin pro db 40px") .. {
 		Name = 'SelectedProfileText';
-		InitCommand=cmd(horizalign,center;y,-160;zoom,0.55;shadowlength,1;diffuse,color("1,1,1,0");strokecolor,Color("Outline");maxwidth,300);
+		InitCommand=cmd(horizalign,center;y,-160;zoom,0.6;shadowlength,1;diffuse,color("1,1,1,0");strokecolor,Color("Outline");maxwidth,300);
 		OnCommand=cmd(diffusealpha,1);
 		OffCommand=cmd(stoptweening;linear,0.25;diffusealpha,0);
 	};
 	
 --PLAYER LEVEL
 
-	t[#t+1] = LoadFont("_sf pro rounded 50px") .. {
+	t[#t+1] = LoadFont("_@fot-newrodin pro db 40px") .. {
 		Name = 'SelectedProfileLevel';
 		InitCommand=cmd(zoom,0;y,-80-7-3;diffuse,color("1,1,1,1"));
-		OnCommand=cmd(diffusealpha,1;zoom,0.5;);
+		OnCommand=cmd(diffusealpha,1;zoom,0.6;);
 		OffCommand=cmd(stoptweening;linear,0.25;diffusealpha,0);
 	};
 	

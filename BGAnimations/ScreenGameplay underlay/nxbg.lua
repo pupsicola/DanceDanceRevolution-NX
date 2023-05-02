@@ -61,7 +61,7 @@ t[#t+1] = Def.ActorFrame {
 		
 		
 		LoadActor("spiral") .. {
-		InitCommand=cmd(x,SCREEN_CENTER_X+200;y,SCREEN_CENTER_Y;diffusealpha,0.1;zoom,1.2;rotationx,-45;blend,'BlendMode_Add';effectperiod,10;spin;effectmagnitude,0,0,5)
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or SCREEN_CENTER_X+200;y,SCREEN_CENTER_Y;diffusealpha,0.1;zoom,1.2;rotationx,-45;blend,'BlendMode_Add';effectperiod,10;spin;effectmagnitude,0,0,5)
 		};
 		
 		LoadActor("halftone") .. {
@@ -79,7 +79,7 @@ t[#t+1] = Def.ActorFrame {
 					end
 				end
 			end;
-			InitCommand=cmd(diffusealpha,0.1;fov,100;blend,'BlendMode_Add';x,SCREEN_CENTER_X+200;y,SCREEN_CENTER_Y-90;rotationx,-35;spin;effectmagnitude,0,0,2;effectclock,'beat';);
+			InitCommand=cmd(diffusealpha,0.1;fov,100;blend,'BlendMode_Add';x,Center1Player() and SCREEN_CENTER_X or SCREEN_CENTER_X+200;y,SCREEN_CENTER_Y-90;rotationx,-35;spin;effectmagnitude,0,0,2;effectclock,'beat';);
 			LoadActor("note")..{
 			OnCommand=cmd();
 			ShowCommand=cmd(linear,1;diffusealpha,2;diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.8;effectclock,'beat';);

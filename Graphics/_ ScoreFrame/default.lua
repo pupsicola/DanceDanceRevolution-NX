@@ -5,21 +5,21 @@ if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 t[#t+1] = Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Default");
 		LoadActor("normal")..{
-		InitCommand=cmd(x,SCREEN_LEFT+270;y,SCREEN_CENTER_Y+292;zoom,0.75;);
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_CENTER_Y+292;zoom,0.75;);
 	}
 	};
 	
 t[#t+1] = Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Gold");
 		LoadActor("gold")..{
-		InitCommand=cmd(x,SCREEN_LEFT+270;y,SCREEN_CENTER_Y+292;zoom,0.75;);
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_CENTER_Y+292;zoom,0.75;);
 	}
 	};
 	
 	t[#t+1] = Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "A20 Blue");
 		LoadActor("a20blue")..{
-		InitCommand=cmd(x,SCREEN_LEFT+270;y,SCREEN_CENTER_Y+292;zoom,0.75;);
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_CENTER_Y+292;zoom,0.75;);
 	}
 	};
 	

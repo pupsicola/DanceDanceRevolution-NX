@@ -66,7 +66,7 @@ end
 
 t[#t+1] = Def.BitmapText {
 		Font = "Common Condensed",
-		InitCommand=cmd(draworder,5;horizalign,left;x,260-132;y,648;zoom,0.5;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.5;),
+		InitCommand=cmd(draworder,5;horizalign,left;x,Center1Player() and SCREEN_CENTER_X-143 or SCREEN_CENTER_X-516;y,648;zoom,0.5;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.5;),
 		OnCommand=function(self)
 			self:settext(GAMESTATE:GetPlayerState(1):GetPlayerOptionsString(0))
 			end;		
@@ -74,7 +74,7 @@ t[#t+1] = Def.BitmapText {
 
 t[#t+1] = Def.BitmapText {
 		Font = "Common Condensed",
-		InitCommand=cmd(draworder,5;horizalign,left;x,160-115;y,648;zoom,0.5;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.75;),
+		InitCommand=cmd(draworder,5;horizalign,left;x,Center1Player() and SCREEN_CENTER_X-225 or SCREEN_CENTER_X-600;y,648;zoom,0.5;diffusealpha,0;sleep,2;linear,0.5;diffusealpha,0.75;),
 		OnCommand=function(self)
 			self:settext("Song Options:")
 			end;	
@@ -84,7 +84,7 @@ t[#t+1] = Def.BitmapText {
 t[#t+1] = Def.ActorFrame{
 	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "On");
 	LoadActor("cd")..{
-	InitCommand=cmd(x,SCREEN_CENTER_X+240;y,SCREEN_CENTER_Y;zoom,1.1;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
+	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+460 or SCREEN_CENTER_X+240;fov,40;rotationy,Center1Player() and 25 or 0;y,SCREEN_CENTER_Y;zoom,Center1Player() and 0.8 or 1.1;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
 	OnCommand=cmd(sleep,5;linear,0.2;diffusealpha,1);
 };
 };
@@ -92,7 +92,7 @@ t[#t+1] = Def.ActorFrame{
 t[#t+1] = Def.ActorFrame{
 	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "Off");
 	LoadActor("cd")..{
-	InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-270;zoom,0.3;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
+	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+450 or SCREEN_CENTER_X;fov,Center1Player() and 40 or 0;rotationy,Center1Player() and 25 or 0;y,Center1Player() and SCREEN_CENTER_Y or SCREEN_CENTER_Y-245;zoom,Center1Player() and 0.75 or 0.4;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
 	OnCommand=cmd(sleep,5;linear,0.2;diffusealpha,1);
 };
 };
@@ -170,7 +170,7 @@ t[#t+1] = LoadFont("_sf rounded pro 28px")..{
 				--self:settext(st_allsteps);
 
 
-				self:x(SCREEN_CENTER_X-370-30+15+180);self:y(SCREEN_CENTER_Y+276+84-38+102);
+				self:x(Center1Player() and SCREEN_CENTER_X+170 or SCREEN_CENTER_X-200);self:y(SCREEN_CENTER_Y+276+84-38+103);
 				self:draworder(50);
 				self:diffuse(color("#FFFFFF"));
 				self:zoom(0.75);
@@ -249,8 +249,8 @@ t[#t+1] = LoadFont("_sf rounded pro 28px")..{
 			self:settext("Edit");
 		end;
 		
-		self:x(SCREEN_CENTER_X-370-130-20-5+additionXPosP1);
-		self:y(SCREEN_CENTER_Y+276.0+86-40+102);
+		self:x(Center1Player() and SCREEN_CENTER_X-150 or SCREEN_CENTER_X-520);
+		self:y(SCREEN_CENTER_Y+276+84-38+103);
 		self:maxwidth(95);	
 		self:draworder(50);
 		self:diffuse(CustomDifficultyToColor( sDifficulty ));
@@ -265,7 +265,7 @@ t[#t+1] = LoadFont("_sf rounded pro 28px")..{
 
 --number--
 t[#t+1] = LoadFont("_sf rounded pro 28px")..{
-			InitCommand=cmd(player,PLAYER_1;horizalign,left;x,SCREEN_CENTER_X-370-30+27-15-120-12+additionXPosP1;y,SCREEN_CENTER_Y+276+84+2-40+102;draworder,50;diffuse,color("#ffffff");zoom,0.75;decelerate,2;addy,-100;);
+			InitCommand=cmd(player,PLAYER_1;horizalign,left;x,Center1Player() and SCREEN_CENTER_X-144 or SCREEN_CENTER_X-512;y,SCREEN_CENTER_Y+276+84-38+103;draworder,50;diffuse,color("#ffffff");zoom,0.75;decelerate,2;addy,-100;);
 			OnCommand=function(self)
 
 				local meterP1 = GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter();
