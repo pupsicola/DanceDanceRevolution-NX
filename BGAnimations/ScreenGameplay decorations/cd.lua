@@ -17,57 +17,6 @@ t[#t+1] = LoadActor("cdbg")..{
 	OffCommand=cmd();
 };
 
-
-t[#t+1]=Def.ActorFrame{
-	InitCommand=cmd(visible,ThemePrefs.Get("TargetScore") == "On");
-	LoadActor("TargetScore")..{
-	InitCommand=cmd(x,-250;zoom,1;diffusealpha,0;);
-			OnCommand=function(self)
-				myScoreSet = StageTopRecord(PLAYER_1);
-				if (myScoreSet["SongOrCourse"]==1) then
-					if (myScoreSet["HasScore"]==1) then
-						local topscore = myScoreSet["topscore"];
-						self:diffusealpha(1);
-					else
-						self:diffusealpha(0);
-					end
-				else
-					self:diffusealpha(0);
-				end
-			end;
-	};
-
-	Def.RollingNumbers { -- Topscore
-			File = THEME:GetPathF("_sf pro rounded","24px");
-			InitCommand=cmd(shadowlength,0;zoom,0.75;maxwidth,240;x,-188;y,14;horizalign,right;);
-			OnCommand=function(self)
-				if GAMESTATE:IsCourseMode() then
-					self:Load("RollingNumbersCourseData");
-				else
-					self:Load("RollingNumbersSongData");
-				end
-				self:diffuse(color("white"));
-				myScoreSet = StageTopRecord(PLAYER_1);
-				
-				if (myScoreSet["SongOrCourse"]==1) then
-					if (myScoreSet["HasScore"]==1) then
-					
-						local topscore = myScoreSet["topscore"];
-						
-						self:diffusealpha(1);
-						
-						self:targetnumber(topscore);
-					else
-						self:diffusealpha(0);
-						self:targetnumber(0);
-					end
-				else
-					self:diffusealpha(0);
-				end
-			end;
-};	
-};
-
 --Jacket
 t[#t+1] = Def.ActorFrame {
 	InitCommand=cmd(y,-40+12+15;draworder,1;diffusealpha,1;zoom,1.1;zoom,1;diffusealpha,1);
