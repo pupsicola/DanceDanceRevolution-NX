@@ -6,11 +6,26 @@ t[#t+1] = Def.ActorFrame {
 	}
 };
 
+t[#t+1] = LoadActor("ScoreDispay")..{
+	InitCommand=cmd(visible,ThemePrefs.Get("TargetScore") == "On");
+	OnCommand=cmd(diffusealpha,0;zoom,Center1Player() and 1.3 or 0.7;rotationy,Center1Player() and -25 or 0;fov,Center1Player() and 40 or 0;y,Center1Player() and -330 or 0;x,Center1Player() and 20 or 480;diffusealpha,1;);
+};
+
 --JacketBG
-t[#t+1] = LoadActor("cd")..{
-	InitCommand=cmd(x,SCREEN_CENTER_X+240;y,SCREEN_CENTER_Y;zoom,1.1;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
+t[#t+1] = Def.ActorFrame{
+	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "On");
+	LoadActor("cd")..{
+	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+375 or SCREEN_CENTER_X+250;fov,40;rotationy,25;y,SCREEN_CENTER_Y;zoom,Center1Player() and 0.75 or 1.1;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
 	OnCommand=cmd(diffusealpha,1);
-	OffCommand=cmd(diffusealpha,0;);
+};
+};
+
+t[#t+1] = Def.ActorFrame{
+	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "Off");
+	LoadActor("cd")..{
+	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+375 or SCREEN_CENTER_X;fov,Center1Player() and 40 or 0;rotationy,Center1Player() and 25 or 0;y,Center1Player() and SCREEN_CENTER_Y or SCREEN_CENTER_Y-245;zoom,Center1Player() and 0.75 or 0.4;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
+	OnCommand=cmd(diffusealpha,1);
+};
 };
 
 t[#t+1] = LoadActor("title")..{
