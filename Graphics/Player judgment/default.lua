@@ -83,7 +83,7 @@ t[#t+1] = Def.ActorFrame {
 	};
 };
 t[#t+1] = Def.ActorFrame {
-	LoadActor(THEME:GetPathG("Judgment","Normal")) .. {
+	LoadActor(jstyle.."Judgment Normal") .. {
 		Name="Judgment";
 		InitCommand=cmd(pause;visible,false);
 		OnCommand=THEME:GetMetric("Judgment","JudgmentOnCommand");

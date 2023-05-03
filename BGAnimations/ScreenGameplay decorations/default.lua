@@ -82,16 +82,16 @@ t[#t+1] = Def.BitmapText {
 		
 
 t[#t+1] = LoadActor("ScoreDispay")..{
-	InitCommand=cmd(visible,ThemePrefs.Get("TargetScore") == "On");
-	OnCommand=cmd(diffusealpha,0;zoom,Center1Player() and 1.3 or 0.7;rotationy,Center1Player() and -25 or 0;fov,Center1Player() and 40 or 0;y,Center1Player() and -330 or 0;x,Center1Player() and 20 or 480;addx,-200;sleep,5;decelerate,1;addx,200;diffusealpha,1;);
+	InitCommand=cmd(visible,ThemePrefs.Get("TargetScore") == "On";bob;effectmagnitude,0,4,0;effecttiming,4,0,4,0;);
+	OnCommand=cmd(heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;diffusealpha,0;zoom,Center1Player() and 1.3 or 0.7;rotationy,Center1Player() and -25 or 0;fov,Center1Player() and 40 or 0;y,Center1Player() and SCREEN_CENTER_Y or 0;x,Center1Player() and 250 or 480;addx,-200;sleep,5;decelerate,1;addx,200;diffusealpha,1;);
 };
 
 
 --JacketBG
 t[#t+1] = Def.ActorFrame{
-	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "On");
+	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "On";bob;effectmagnitude,0,4,0;effecttiming,4,0,4,0;);
 	LoadActor("cd")..{
-	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+375 or SCREEN_CENTER_X+250;fov,40;rotationy,25;y,SCREEN_CENTER_Y;zoom,Center1Player() and 0.75 or 1.1;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
+	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+375 or SCREEN_CENTER_X+250;fov,40;rotationy,25;y,SCREEN_CENTER_Y;zoom,Center1Player() and 0.75 or 1.1;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;);
 	OnCommand=cmd(addx,200;sleep,5;decelerate,1;addx,-200;diffusealpha,1);
 };
 };

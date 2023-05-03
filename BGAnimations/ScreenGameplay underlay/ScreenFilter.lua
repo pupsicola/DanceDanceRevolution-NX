@@ -9,7 +9,7 @@ local filterColor = color("0,0,0,1")
 local filterAlphas = {
 	PlayerNumber_P1 = 1,
 	PlayerNumber_P2 = 1,
-	Default = 0,
+	Default = 0.5,
 }
 
 local t = Def.ActorFrame{};

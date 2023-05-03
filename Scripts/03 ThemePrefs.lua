@@ -1,7 +1,4 @@
 -- sm-ssc Default Theme Preferences Handler
-local function OptionNameString(str)
-	return THEME:GetString('OptionNames',str)
-end
 
 -- Example usage of new system (not really implemented yet)
 local Prefs =
@@ -48,9 +45,24 @@ local Prefs =
 		Choices = { "Default", "Gold", "A20 Blue", "A3 Blue"},
 		Values = { "Default", "Gold", "A20 Blue", "A3 Blue" }
 	},
+	JudgmentStyle=
+	{
+		Default = "Default",
+		Choices = { "Default", "Gold", },
+		Values = { "Default", "Gold", }
+	},
 }
 
 ThemePrefs.InitAll(Prefs)
+
+jstyle = "default_"
+function ChangeJudgmentStyle()
+	if ThemePrefs.Get("JudgmentStyle") == "Default" then
+		jstyle = "default_"
+	else
+		jstyle = "gold_"
+	end
+end
 
 function InitUserPrefs()
 	local Prefs = {
