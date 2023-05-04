@@ -42,14 +42,14 @@ t[#t+1] = Def.ActorFrame {
 		Def.ActorFrame{
 		InitCommand=cmd(rotationy,-25;fov,130;y,SCREEN_CENTER_Y;x,SCREEN_LEFT+100);
 		LoadActor("cylinder")..{
-			OnCommand=cmd(zoom,0.4;blend,'BlendMode_Add';diffusealpha,0.1;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;);
+			OnCommand=cmd(zoom,0.45;blend,'BlendMode_Add';diffusealpha,0.1;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;);
 			};
 		};
 		
 		Def.ActorFrame{
 		InitCommand=cmd(rotationy,25;fov,130;y,SCREEN_CENTER_Y;x,SCREEN_RIGHT-100);
 		LoadActor("cylinder")..{
-			OnCommand=cmd(zoom,0.4;blend,'BlendMode_Add';diffusealpha,0.1;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;);
+			OnCommand=cmd(zoom,0.45;blend,'BlendMode_Add';diffusealpha,0.1;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;);
 			};
 		};
 		
