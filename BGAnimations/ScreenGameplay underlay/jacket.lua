@@ -23,8 +23,6 @@ t[#t+1] = Def.ActorFrame {
 					if song:HasJacket() then
 						self:LoadBackground(song:GetJacketPath());
 						self:setsize(480,480);
-						self:fadeleft(0.5);
-						self:faderight(0.5);
 					elseif song:HasBackground() then
 						self:LoadFromSongBackground(GAMESTATE:GetCurrentSong());
 						self:setsize(480,480);
