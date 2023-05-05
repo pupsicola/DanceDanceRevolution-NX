@@ -11,9 +11,9 @@ local Prefs =
 	},
 	NXBG =
 	{
-		Default = "On",
-		Choices = { "On", "Off" },
-		Values = { "On", "Off" }
+		Default = "Auto",
+		Choices = { "Auto", "On", "Off"},
+		Values = { "Auto", "On", "Off" }
 	},
 	ScreenClock =
 	{
