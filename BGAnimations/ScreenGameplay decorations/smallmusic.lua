@@ -1,7 +1,7 @@
 local t = Def.ActorFrame{};
 
 --JacketBG
-t[#t+1] = LoadActor("smallmusicframe")..{
+t[#t+1] = LoadActor("tinyframe")..{
 	InitCommand=cmd(y,-150;zoom,1.2;);
 	OnCommand=cmd(diffusealpha,1);
 	OffCommand=cmd();

@@ -1103,7 +1103,7 @@ local t = Def.ActorFrame {
 		LoadActor( THEME:GetPathS("","Profile_Move") )..{
 			DirectionButtonMessageCommand=cmd(play);
 		};
-		LoadActor(THEME:GetPathB("","_door/selectprofile"))..{
+		LoadActor(THEME:GetPathB("","_door/profile"))..{
 		InitCommand=cmd(x,SCREEN_CENTER_X;y,30;diffusealpha,0;);
 		OnCommand=cmd(linear,0.25;diffusealpha,1;);
 		OffCommand=cmd(linear,0.25;diffusealpha,0);

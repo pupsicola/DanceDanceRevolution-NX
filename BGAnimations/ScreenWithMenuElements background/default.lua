@@ -1,7 +1,7 @@
 local t = Def.ActorFrame {};
 
 t[#t+1] = Def.ActorFrame {
-		LoadActor("blurbg") .. {
+		LoadActor("backing") .. {
 		OnCommand=cmd(diffusealpha,1;texcoordvelocity,0.03,0;Center;zoomto,2000,SCREEN_HEIGHT;)
 		};
 		

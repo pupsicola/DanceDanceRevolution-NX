@@ -12,7 +12,7 @@ t[#t+1] = Def.ActorFrame{
 };
 
 --JacketBG
-t[#t+1] = LoadActor("cdbg")..{
+t[#t+1] = LoadActor("bg")..{
 	InitCommand=cmd();
 	OnCommand=cmd(diffusealpha,1);
 	OffCommand=cmd();
