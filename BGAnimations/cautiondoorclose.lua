@@ -18,7 +18,7 @@ t[#t+1] = Def.ActorFrame {
 };
 
 t[#t+1] = Def.ActorFrame {
-	LoadActor(THEME:GetPathB("","_door/loadingprofile"))..{
+	LoadActor(THEME:GetPathB("","_door/music"))..{
 	InitCommand=cmd(x,1093;addx,50;y,680;diffusealpha,0;);
 	OffCommand=cmd(sleep,2.5;decelerate,0.25;addx,-50;diffusealpha,1;draworder,7;);
 	};

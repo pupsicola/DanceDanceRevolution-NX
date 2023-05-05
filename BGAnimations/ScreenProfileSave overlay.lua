@@ -1,7 +1,7 @@
 local x = Def.ActorFrame{};
 
 x[#x+1] = Def.ActorFrame {
-	LoadActor(THEME:GetPathB("","_door/savingprofile"))..{
+	LoadActor(THEME:GetPathB("","_door/saving"))..{
 	InitCommand=cmd(x,1105;y,680;diffusealpha,1;sleep,0.5;decelerate,0.25;diffusealpha,0;addx,-50;draworder,7;);
 	};
 };
