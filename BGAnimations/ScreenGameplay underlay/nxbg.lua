@@ -1,7 +1,6 @@
 local t = Def.ActorFrame{};
 
 t[#t+1] = Def.ActorFrame {
-	InitCommand=cmd(visible,ThemePrefs.Get("NXBG") == "On");
 		Def.ActorFrame {
 		
 		LoadActor("blackbg") .. {
@@ -109,7 +108,7 @@ t[#t+1] = Def.ActorFrame {
 					end
 				end
 			end;
-			InitCommand=cmd(diffusealpha,0.1;fov,100;blend,'BlendMode_Add';x,Center1Player() and SCREEN_CENTER_X or SCREEN_CENTER_X+200;y,SCREEN_CENTER_Y-50;rotationx,-35;spin;effectmagnitude,0,0,2;effectclock,'beat';);
+			InitCommand=cmd(diffusealpha,0.1;fov,100;blend,'BlendMode_Add';x,Center1Player() and SCREEN_CENTER_X or SCREEN_CENTER_X+225;y,SCREEN_CENTER_Y-50;rotationx,-35;spin;effectmagnitude,0,0,2;effectclock,'beat';);
 			LoadActor("note")..{
 			OnCommand=cmd();
 			ShowCommand=cmd(linear,1;diffusealpha,3;diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.8;effectclock,'beat';);
@@ -118,7 +117,7 @@ t[#t+1] = Def.ActorFrame {
 		};
 
 		LoadActor("flash") .. {
-			OnCommand=cmd(diffusealpha,0.45;blend,'BlendMode_Add';zoom,1.3;Center;heartbeat;effectclock,'beat';effectmagnitude,2.0,1.01,1.0;effectoffset,0.5;)
+			OnCommand=cmd(diffusealpha,0.45;blend,'BlendMode_Add';zoom,1.3;Center;heartbeat;effectclock,'beat';effectmagnitude,2.0,1.01,1.0;)
 		};
 		
 					LoadActor("rounded") .. {
