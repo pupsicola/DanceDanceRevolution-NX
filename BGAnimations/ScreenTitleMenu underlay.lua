@@ -31,13 +31,13 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 		Text="DDR © Konami";
-		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlength,1;y,70;x,1195;zoom,0.45;y,661+20);
+		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlength,1;y,70;x,1190;zoom,0.45;y,661+20);
 				OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	 };
 	 
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 		Text="Theme by pupsi";
-		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlength,1;x,1195;zoom,0.45;y,661+40);
+		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlength,1;x,1190;zoom,0.45;y,661+40);
 				OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	 };
 
