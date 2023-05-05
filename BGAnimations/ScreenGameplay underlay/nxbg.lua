@@ -65,19 +65,19 @@ t[#t+1] = Def.ActorFrame {
 		};
 		
 		LoadActor("tone") .. {
-		OnCommand=cmd(diffusealpha,0.25;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;y,Center1Player() and SCREEN_CENTER_Y-2000 or SCREEN_CENTER_Y;)
+		OnCommand=cmd(diffusealpha,0.25;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;x,Center1Player() and SCREEN_CENTER_X-4000 or SCREEN_CENTER_X+70;)
 		};
 		
 
 		Def.ActorFrame{
-		InitCommand=cmd(rotationy,-25;fov,115;y,SCREEN_CENTER_Y;x,Center1Player() and SCREEN_LEFT+100 or SCREEN_LEFT-560;);
+		InitCommand=cmd(rotationy,-25;fov,115;y,SCREEN_CENTER_Y;x,Center1Player() and SCREEN_LEFT+100 or SCREEN_LEFT-500;);
 		LoadActor("cylinder")..{
 			OnCommand=cmd(zoom,0.45;blend,'BlendMode_Add';diffusealpha,0.1;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;);
 			};
 		};
 		
 		Def.ActorFrame{
-		InitCommand=cmd(rotationy,25;fov,115;y,SCREEN_CENTER_Y;x,Center1Player() and SCREEN_RIGHT-100 or SCREEN_RIGHT-560;);
+		InitCommand=cmd(rotationy,25;fov,115;y,SCREEN_CENTER_Y;x,Center1Player() and SCREEN_RIGHT-100 or SCREEN_RIGHT-680;);
 		LoadActor("cylinder")..{
 			OnCommand=cmd(zoom,0.45;blend,'BlendMode_Add';diffusealpha,0.1;texcoordvelocity,0,0.05;effectclock,'beat';effectmagnitude,2,1,1;set_use_effect_clock_for_texcoords,true;);
 			};
