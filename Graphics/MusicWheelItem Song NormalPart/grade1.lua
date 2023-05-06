@@ -151,10 +151,10 @@ local function setGradeP1(self,param)
 			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
 		elseif FullComboRank == 2 then --2=PFC
 			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","PFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.8;effectperiod,0.1))(self);
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
 		elseif FullComboRank == 1 then --1=MFC
 			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","MFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.8;effectperiod,0.1))(self);
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
 
 		end
 		

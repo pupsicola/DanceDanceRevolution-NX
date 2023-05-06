@@ -217,7 +217,7 @@ local function DrawDifList(pn,diff)
 ---Grade
 	
 			Def.Quad{
-			InitCommand=cmd(shadowlength,0;zoom,0.30;cropright,0.01;);
+			InitCommand=cmd(shadowlength,0;zoom,0.30;cropright,0.1;);
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd();
 			SetCommand=function(self)

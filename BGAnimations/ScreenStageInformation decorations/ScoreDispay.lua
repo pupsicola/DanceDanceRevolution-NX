@@ -210,7 +210,7 @@ t[#t+1]=Def.ActorFrame{
 	};
 	
 	Def.Quad{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlength,1;y,SCREEN_CENTER_Y+188;horizalign,center;draworder,2;);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlength,1;y,SCREEN_CENTER_Y+188;horizalign,center;draworder,2;cropright,0.1;);
 
 		OnCommand=function(self)
 			local SongOrCourse, StepsOrTrail;
