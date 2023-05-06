@@ -2,14 +2,14 @@ local t = Def.ActorFrame{};
 
 --JacketBG
 t[#t+1] = LoadActor("tinyframe")..{
-	InitCommand=cmd(y,-150;zoom,1.2;);
+	InitCommand=cmd(y,-150+150;zoom,1.2;);
 	OnCommand=cmd(diffusealpha,1);
 	OffCommand=cmd();
 };
 
 --Jacket
 t[#t+1] = Def.ActorFrame {
-	InitCommand=cmd(y,-125;x,-130;draworder,1;diffusealpha,1;zoom,0.25;diffusealpha,1);
+	InitCommand=cmd(y,-125+150;x,-130;draworder,1;diffusealpha,1;zoom,0.25;diffusealpha,1);
 	Def.Sprite {
 		OnCommand=function (self)
 			local course = GAMESTATE:GetCurrentCourse();
@@ -62,7 +62,7 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px") .. {
 		self:horizalign(left);
 		self:playcommand( "On" );
 		self:maxwidth(310);
-		self:y(-135);
+		self:y(-135+150);
 		self:x(-80);
 		self:draworder(1);
 	end;
@@ -88,10 +88,13 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px") .. {
 		self:horizalign(left);
 		self:playcommand( "On" );
 		self:maxwidth(350);
-		self:y(-105);
+		self:y(-105+150);
 		self:x(-80);
 		self:draworder(1);
 	end;
 }
+
+
+
 	
 return t

@@ -2,14 +2,14 @@ local t = Def.ActorFrame{};
 
 --JacketBG
 t[#t+1] = LoadActor("tinyframe")..{
-	InitCommand=cmd(y,-150;zoom,1.2;);
+	InitCommand=cmd(y,-150+150;zoom,1.2;);
 	OnCommand=cmd(diffusealpha,1);
 	OffCommand=cmd();
 };
 
 --Jacket
 t[#t+1] = Def.ActorFrame {
-	InitCommand=cmd(y,-125;x,-130;draworder,1;diffusealpha,1;zoom,0.25;diffusealpha,1);
+	InitCommand=cmd(y,-125+150;x,-130;draworder,1;diffusealpha,1;zoom,0.25;diffusealpha,1);
 	Def.Sprite {
 		OnCommand=function (self)
 			local course = GAMESTATE:GetCurrentCourse();
@@ -46,7 +46,7 @@ t[#t+1] = Def.ActorFrame {
 
 --songinfo--
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,left;y,-135;x,-80;zoom,0.8;draworder,50;);
+	InitCommand=cmd(horizalign,left;y,-135+150;x,-80;zoom,0.8;draworder,50;);
 	OnCommand=cmd(diffusealpha,1);
 	OffCommand=cmd(sleep,2;linear,0.15;diffusealpha,0);
 	CurrentSongChangedMessageCommand=function(self)
@@ -63,7 +63,7 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 };
 --artist--
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,left;y,-105;x,-80;zoom,0.6;draworder,50;);
+	InitCommand=cmd(horizalign,left;y,-105+150;x,-80;zoom,0.6;draworder,50;);
 	OnCommand=cmd(diffusealpha,0.5);
 	OffCommand=cmd(sleep,2;linear,0.15;diffusealpha,0);
 	CurrentSongChangedMessageCommand=function(self)

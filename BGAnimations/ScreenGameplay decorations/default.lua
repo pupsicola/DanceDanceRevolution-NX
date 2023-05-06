@@ -104,8 +104,8 @@ t[#t+1] = Def.ActorFrame{
 t[#t+1] = Def.ActorFrame{
 	InitCommand=cmd(visible,ThemePrefs.Get("NowPlayingOverlay") == "Off");
 	LoadActor("smallmusic")..{
-	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+375 or SCREEN_CENTER_X;fov,Center1Player() and 40 or 0;rotationy,Center1Player() and 25 or 0;y,Center1Player() and SCREEN_CENTER_Y+90 or SCREEN_CENTER_Y+385;zoom,Center1Player() and 0.75 or 0.5;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;);
-	OnCommand=cmd(addy,100;sleep,5;decelerate,1;addy,-100;diffusealpha,1);
+	InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X+375 or SCREEN_CENTER_X;fov,Center1Player() and 40 or 0;rotationy,Center1Player() and 25 or 0;y,Center1Player() and SCREEN_CENTER_Y-10 or SCREEN_CENTER_Y+311;zoom,Center1Player() and 0.75 or 0.5;diffusealpha,0;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;);
+	OnCommand=cmd(addy,100;sleep,0;decelerate,1;addy,-100;diffusealpha,1);
 };
 };
 
