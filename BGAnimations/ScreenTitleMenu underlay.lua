@@ -9,7 +9,7 @@ InitCommand=cmd();
 };
 
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-		Text="Pre-Release Beta 1.1";
+		Text="Pre-Release Beta 1.2";
 		InitCommand=cmd(horizalign,left;diffuse,color("1,1,1,1");shadowlength,1;x,18;zoom,0.45;y,661+40);
 				OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	 };
