@@ -175,27 +175,33 @@ local function DrawDifList(pn,diff)
               local topscore;
               if scores[1] then
                 topscore = scores[1];
-                assert(topscore);
-                local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
-                local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
-                local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
-                local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
-                local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
-                local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
-                if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 then
-                  if (greats+perfects) == 0 then
-                    self:diffuse(color("#ffffe7"));
-                    self:glowblink();
-                    self:effectperiod(0.20);
-                  elseif greats == 0 then
-                    self:diffuse(GameColor.Judgment["JudgmentLine_W2"]);
-                    self:glowshift();
-                  elseif (misses+boos+goods) == 0 then
-                    self:diffuse(GameColor.Judgment["JudgmentLine_W3"]);
-                    self:stopeffect();
-                  elseif (misses+boos) == 0 then
-                    self:diffuse(GameColor.Judgment["JudgmentLine_W4"]);
-                    self:stopeffect();
+         	assert(topscore);
+						local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+												+topscore:GetTapNoteScore("TapNoteScore_HitMine")+topscore:GetHoldNoteScore("HoldNoteScore_LetGo")
+						local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
+						local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
+						local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
+						local perfects = topscore:GetTapNoteScore("TapNoteScore_W2")
+						local marvelous = topscore:GetTapNoteScore("TapNoteScore_W1")
+						local hasUsedLittle = string.find(topscore:GetModifiers(),"Little")
+						if (misses+boos) == 0 and scores[1]:GetScore() > 0 and (marvelous+perfects)>0 and (not hasUsedLittle) and topscore:GetGrade()~="Grade_Failed" then
+							if (goods+greats+perfects) == 0 then
+								self:diffuse(GameColor.Judgment["JudgmentLine_W1"]);
+								self:glowblink();
+								self:effectperiod(0.20);
+
+							elseif goods+greats == 0 then
+								self:diffuse(GameColor.Judgment["JudgmentLine_W2"]);
+								--self:glowshift();
+
+							elseif (misses+boos+goods) == 0 then
+								self:diffuse(GameColor.Judgment["JudgmentLine_W3"]);
+								self:stopeffect();
+
+							elseif (misses+boos) == 0 then
+								self:diffuse(GameColor.Judgment["JudgmentLine_W4"]);
+								self:stopeffect();
+
                   end;
                   self:visible(true)
                   self:zoom(0.15);
@@ -217,7 +223,7 @@ local function DrawDifList(pn,diff)
 ---Grade
 	
 			Def.Quad{
-			InitCommand=cmd(shadowlength,0;zoom,0.30;cropright,0.1;);
+			InitCommand=cmd(shadowlength,0;zoom,0.30;cropright,0.01;);
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd();
 			SetCommand=function(self)

@@ -53,11 +53,11 @@ t[#t+1] = Def.ActorFrame {
 		},
 		
 		LoadActor("darkoverlay") .. {
-		OnCommand=cmd(Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;y,Center1Player() and SCREEN_CENTER_Y or SCREEN_CENTER_Y-2000;)
+		OnCommand=cmd(Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0.5;y,Center1Player() and SCREEN_CENTER_Y or SCREEN_CENTER_Y-2000;)
 		};
 		
 		LoadActor("dark2") .. {
-		OnCommand=cmd(Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;y,Center1Player() and SCREEN_CENTER_Y-2000 or SCREEN_CENTER_Y;)
+		OnCommand=cmd(Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0.5;y,Center1Player() and SCREEN_CENTER_Y-2000 or SCREEN_CENTER_Y;)
 		};
 		
 		LoadActor("halftone") .. {

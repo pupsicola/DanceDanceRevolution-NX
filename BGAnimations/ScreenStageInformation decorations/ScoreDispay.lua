@@ -287,8 +287,8 @@ t[#t+1]=Def.ActorFrame{
 	};
 	
 	Def.RollingNumbers { -- Topscore
-			File = THEME:GetPathF("_sf pro rounded","24px");
-			InitCommand=cmd(shadowlength,0;zoom,1;y,SCREEN_CENTER_Y+190;horizalign,center;);
+			File = THEME:GetPathF("_@fot-newrodin pro db","30px");
+			InitCommand=cmd(shadowlength,0;zoom,0.65;y,SCREEN_CENTER_Y+190;horizalign,center;);
 			OnCommand=function(self)
 				if GAMESTATE:IsCourseMode() then
 					self:Load("RollingNumbersCourseData");

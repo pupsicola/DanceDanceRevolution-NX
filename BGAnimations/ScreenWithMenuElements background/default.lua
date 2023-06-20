@@ -11,11 +11,11 @@ t[#t+1] = Def.ActorFrame {
 		
 		LoadActor("spiral") .. {
 		InitCommand=cmd(fov,120);
-		OnCommand=cmd(Center;diffusealpha,0.1;rotationx,-45;blend,'BlendMode_Add';spin;effectmagnitude,0,0,5)
+		OnCommand=cmd(Center;diffusealpha,0.05;rotationx,-45;blend,'BlendMode_Add';spin;effectmagnitude,0,0,5)
 		};
 		
 		LoadActor("halftone") .. {
-		OnCommand=cmd(diffusealpha,0.1;blend,'BlendMode_Add';texcoordvelocity,-0.01,0;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
+		OnCommand=cmd(diffusealpha,0.05;blend,'BlendMode_Add';texcoordvelocity,-0.01,0;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
 		};
 		
 		LoadActor("rounded") .. {

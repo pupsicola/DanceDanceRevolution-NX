@@ -138,13 +138,13 @@ local function setGradeP1(self,param)
 			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","NoFCWithBatteryLives"));
 			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,0.1))(self);
 		elseif FullComboRank == 6 then --6=GoodOldFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GoodOldFC"));
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GoodFC"));
 			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
 		elseif FullComboRank == 5 then -- 5=GoodFC
 			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GoodFC"));
 			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
 		elseif FullComboRank == 4 then -- 4=GreatOldFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GreatOldFC"));
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GreatFC"));
 			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
 		elseif FullComboRank == 3 then --3=GreatFC
 			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GreatFC"));
