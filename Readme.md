@@ -10,4 +10,4 @@ As of now and probably for a while going forward, the theme only supports single
 
 There is a decent amount of polish I'd still like to add. Please let me know of anything that irks you, things you'd want added if possible, or anything that seems out of place or needs tidying/polish.
 
-Thank you for testing!
+Thank you for trying out DanceDanceRevolution NX!
