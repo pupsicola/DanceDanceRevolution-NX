@@ -86,7 +86,7 @@ local function DrawDifList(pn,diff)
 --難度別最高分數資訊
 		Def.RollingNumbers {
 			File = THEME:GetPathF("_sf rounded pro", "20px");
-			InitCommand=cmd(shadowlength,1;zoom,0.65;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.65;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(linear,0.25;diffusealpha,0;);
 			SetCommand=function(self)
@@ -223,7 +223,7 @@ local function DrawDifList(pn,diff)
 ---Grade
 	
 			Def.Quad{
-			InitCommand=cmd(shadowlength,0;zoom,0.30;cropright,0.01;);
+			InitCommand=cmd(shadowlengthy,2;zoom,0.30;cropright,0.01;);
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd();
 			SetCommand=function(self)
@@ -368,7 +368,7 @@ t[#t+1] = Def.ActorFrame {
 						self:zoomtowidth(130);
 						self:zoomtoheight(130);	
 						self:croptop(0.274);
-						self:cropbottom(0.27);
+						self:cropbottom(0.271);
 						self:faderight(0.5);
 						self:fadeleft(0.5);
 					elseif song:HasBackground() then
@@ -377,7 +377,7 @@ t[#t+1] = Def.ActorFrame {
 						self:zoomtowidth(130);
 						self:zoomtoheight(130);	
 						self:croptop(0.274);
-						self:cropbottom(0.27);
+						self:cropbottom(0.271);
 						self:faderight(0.5);
 						self:fadeleft(0.5)
 					else
@@ -385,7 +385,7 @@ t[#t+1] = Def.ActorFrame {
 						self:zoomtowidth(130);
 						self:zoomtoheight(130);
 						self:croptop(0.274);
-						self:cropbottom(0.27);
+						self:cropbottom(0.271);
 						self:faderight(0.5);
 						self:fadeleft(0.5)
 					end;
@@ -397,7 +397,7 @@ t[#t+1] = Def.ActorFrame {
 							self:zoomtowidth(130);
 							self:zoomtoheight(130);	
 							self:croptop(0.274);
-							self:cropbottom(0.27);
+						self:cropbottom(0.271);
 							self:faderight(0.5);
 							self:fadeleft(0.5)
 							self:stoptweening();
@@ -406,7 +406,7 @@ t[#t+1] = Def.ActorFrame {
 							self:zoomtowidth(130);
 							self:zoomtoheight(130);	
 							self:croptop(0.274);
-							self:cropbottom(0.27);
+						self:cropbottom(0.271);
 							self:faderight(0.5);
 							self:fadeleft(0.5)
 							self:stoptweening();							
@@ -417,7 +417,7 @@ t[#t+1] = Def.ActorFrame {
 						self:zoomtowidth(130);
 						self:zoomtoheight(130);		
 						self:croptop(0.274);
-						self:cropbottom(0.27);
+						self:cropbottom(0.271);
 						self:faderight(0.5);
 						self:fadeleft(0.5)						
 				end;
@@ -454,7 +454,7 @@ t[#t+1] = Def.ActorFrame{
 
 t[#t+1] = Def.BitmapText {
 		Font = "Common Normal",
-		InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-320;y,SCREEN_CENTER_Y-141;zoom,0.5;shadowlength,1;diffusealpha,0.5;),
+		InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-320;y,SCREEN_CENTER_Y-141;zoom,0.5;shadowlengthy,2;diffusealpha,0.5;),
 		OnCommand=function(self)
 			self:settext("Song Length:            BPM:")
 			end;	
@@ -746,7 +746,7 @@ t[#t+1] = LoadActor("detailp1")..{
 -- Song Title
 
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-355+40-6;shadowlength,2;y,SCREEN_CENTER_Y+12-195-7;draworder,2;zoom,0.8;diffusealpha,0;linear,0.5;diffusealpha,1;);
+	InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-355+40-6;shadowlengthy,3;y,SCREEN_CENTER_Y+12-195-7;draworder,2;zoom,0.8;diffusealpha,0;linear,0.5;diffusealpha,1;);
 	OnCommand=cmd(playcommand,"CurrentSongChangedMessage");
 	OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	CurrentSongChangedMessageCommand=function(self)
@@ -771,7 +771,7 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 };
 --artist--
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,left;shadowlength,2;x,SCREEN_CENTER_X-355+40-6;y,SCREEN_CENTER_Y+45-195-12.5;zoom,0.6;draworder,2;diffusealpha,0;linear,0.5;diffusealpha,0.5;);
+	InitCommand=cmd(horizalign,left;shadowlengthy,2.5;x,SCREEN_CENTER_X-355+40-6;y,SCREEN_CENTER_Y+45-195-12.5;zoom,0.6;draworder,2;diffusealpha,0;linear,0.5;diffusealpha,0.5;);
 	OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	CurrentSongChangedMessageCommand=function(self)
 	local song = GAMESTATE:GetCurrentSong();
@@ -797,7 +797,7 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 
 --Group Names
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px") ..{
-	InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-355+40-6;y,SCREEN_CENTER_Y+27-195;zoom,1;diffuse,color("#ffffff");shadowlength,1;maxwidth,340);
+	InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-355+40-6;y,SCREEN_CENTER_Y+27-195;zoom,1;diffuse,color("#ffffff");shadowlengthy,2;maxwidth,340);
 	CurrentSongChangedMessageCommand=cmd(queuecommand,"Set");
 	SetCommand=function(self)
 		if SCREENMAN:GetTopScreen():GetNextScreenName()=="ScreenStageInformation" 

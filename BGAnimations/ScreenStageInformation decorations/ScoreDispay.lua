@@ -106,7 +106,7 @@ t[#t+1]=Def.ActorFrame{
 };
 	--FC Ring
 	LoadActor(THEME:GetPathG("StageIn","Spin FullCombo"))..{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.25;shadowlength,1;x,SCREEN_LEFT+160-OffsetX;y,SCREEN_CENTER_Y+189;horizalign,center;draworder,2;);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.25;shadowlengthy,2;x,SCREEN_LEFT+160-OffsetX;y,SCREEN_CENTER_Y+189;horizalign,center;draworder,2;);
 	OnCommand=function(self)
 			local SongOrCourse, StepsOrTrail;
 			if GAMESTATE:IsCourseMode() then
@@ -210,7 +210,7 @@ t[#t+1]=Def.ActorFrame{
 	};
 	
 	Def.Quad{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlength,1;y,SCREEN_CENTER_Y+188;horizalign,center;draworder,2;cropright,0.1;);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlengthy,2;y,SCREEN_CENTER_Y+188;horizalign,center;draworder,2;cropright,0.1;);
 
 		OnCommand=function(self)
 			local SongOrCourse, StepsOrTrail;
@@ -288,7 +288,7 @@ t[#t+1]=Def.ActorFrame{
 	
 	Def.RollingNumbers { -- Topscore
 			File = THEME:GetPathF("_@fot-newrodin pro db","30px");
-			InitCommand=cmd(shadowlength,0;zoom,0.65;y,SCREEN_CENTER_Y+190;horizalign,center;);
+			InitCommand=cmd(shadowlengthy,2;zoom,0.6;y,SCREEN_CENTER_Y+190;horizalign,center;);
 			OnCommand=function(self)
 				if GAMESTATE:IsCourseMode() then
 					self:Load("RollingNumbersCourseData");
@@ -313,13 +313,13 @@ t[#t+1]=Def.ActorFrame{
 				else
 					self:diffusealpha(0);
 				end
-				(cmd(x,SCREEN_LEFT+OffsetX-35))(self);
+				(cmd(x,SCREEN_LEFT+OffsetX-32))(self);
 			end;
 };	
 
 LoadFont("Common Normal") .. {
 	Text=PROFILEMAN:GetProfile(PLAYER_1):GetDisplayName();
-	InitCommand=cmd(maxwidth,300;zoom,0.75;x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+225;horizalign,center;);
+	InitCommand=cmd(shadowlengthy,2;maxwidth,300;zoom,0.75;x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+225;horizalign,center;);
 	OnCommand=function(self)
 		(cmd(x,SCREEN_LEFT+OffsetX-113+110))(self);
 	end;
@@ -584,7 +584,7 @@ if not GAMESTATE:IsCourseMode() then --Difficulty
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(maxwidth,240;zoom,0.75;y,SCREEN_CENTER_Y+153.5;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(shadowlengthy,2;maxwidth,240;zoom,0.75;y,SCREEN_CENTER_Y+153.5;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
 			(cmd(x,SCREEN_LEFT+OffsetX-125+120))(self);
 		end;
@@ -607,7 +607,7 @@ else
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(maxwidth,240;zoom,1.1;x,SCREEN_LEFT-OffsetX-125;y,SCREEN_CENTER_Y+150;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(shadowlengthy,2;maxwidth,240;zoom,1.1;x,SCREEN_LEFT-OffsetX-125;y,SCREEN_CENTER_Y+150;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
 			(cmd(x,SCREEN_LEFT+OffsetX-125))(self);
 		end;

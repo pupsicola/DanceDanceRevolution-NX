@@ -7,7 +7,7 @@ function GetLocalProfiles()
 
 
 			LoadFont("_@fot-newrodin pro db 30px") .. {
-				InitCommand=cmd(y,-85;zoom,0.4;);
+				InitCommand=cmd(y,-85;zoom,0.4;shadowlengthy,2;);
 				BeginCommand=function(self)
 					local numSongsPlayed = profile:GetNumTotalSongsPlayed();
 					local s = numSongsPlayed == 1 and "Song" or "Songs";
@@ -221,7 +221,7 @@ function LoadPlayerStuff(Player)
 	
 	t[#t+1] = LoadFont("_@fot-newrodin pro db 40px") .. {
 		Name = 'SelectedProfileText';
-		InitCommand=cmd(horizalign,center;y,-160;zoom,0.6;shadowlength,1;diffuse,color("1,1,1,0");strokecolor,Color("Outline");maxwidth,300);
+		InitCommand=cmd(horizalign,center;y,-160;zoom,0.6;diffuse,color("1,1,1,0");strokecolor,Color("Outline");maxwidth,300);
 		OnCommand=cmd(diffusealpha,1);
 		OffCommand=cmd(stoptweening;linear,0.25;diffusealpha,0);
 	};
@@ -230,7 +230,7 @@ function LoadPlayerStuff(Player)
 
 	t[#t+1] = LoadFont("_@fot-newrodin pro db 40px") .. {
 		Name = 'SelectedProfileLevel';
-		InitCommand=cmd(zoom,0;y,-80-7-3;diffuse,color("1,1,1,1"));
+		InitCommand=cmd(draworder,1;zoom,0;y,-80-7-3;diffuse,color("1,1,1,1"));
 		OnCommand=cmd(diffusealpha,1;zoom,0.6;);
 		OffCommand=cmd(stoptweening;linear,0.25;diffusealpha,0);
 	};
@@ -268,8 +268,8 @@ function LoadPlayerStuff(Player)
 	
 	t[#t+1] = Def.Sprite{
 		Name = 'selectedHonorPic';
-		InitCommand=cmd(x,30;y,-137;zoom,0;scaletoclipped,0,0;);
-		OnCommand=cmd(sleep,0.9;linear,0.25;diffusealpha,0;);
+		InitCommand=cmd(x,0;y,-92;zoom,1;scaletoclipped,0,0;);
+		OnCommand=cmd(sleep,0.9;linear,0.25;diffusealpha,1;);
 		OffCommand=cmd(stoptweening;linear,0.25;scaletoclipped,0,0;);
 	};
 	
@@ -368,7 +368,7 @@ function LoadPlayerStuff(Player)
 
 	t[#t+1]=LoadFont("_@fot-newrodin pro db 30px") .. {
 		Name = 'selectRank';
-		InitCommand=cmd(y,-25;zoom,0;maxwidth,350);
+		InitCommand=cmd(y,-25;shadowlengthy,2;zoom,0;maxwidth,350);
 		OnCommand=function(self)
 			(cmd(diffusealpha,1;zoom,0.4;))(self);
 		end;

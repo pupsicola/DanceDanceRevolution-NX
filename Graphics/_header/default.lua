@@ -3,7 +3,7 @@ return Def.ActorFrame {
 		Name="HeaderText";
 		Text=Screen.String("HeaderText");
 		
-		InitCommand=cmd(x,0;y,-90;zoom,0.9;shadowlength,0;diffuse,1,1,1,1;diffusecolor,Color("White"););
+		InitCommand=cmd(x,0;y,-90;zoom,0.9;shadowlengthy,2;diffuse,1,1,1,1;diffusecolor,Color("White"););
 		--OnCommand=cmd(skewx,-0.125;strokecolor,Color("Outline");diffusebottomedge,color("0.875,0.875,0.875"));
 		OnCommand=function(self)
 			if Screen.String("HeaderText") == 'SELECT MUSIC' or Screen.String("HeaderText") == 'SELECT COURSE' then

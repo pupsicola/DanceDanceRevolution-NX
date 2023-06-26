@@ -3,14 +3,20 @@ local t = Def.ActorFrame{};
 t[#t+1] = Def.ActorFrame {
 InitCommand=cmd();
 		LoadActor( "ScreenLogo decorations/3dlogo" )..{
-		InitCommand=cmd(rotationx,-10;wag;effectmagnitude,0,0,2;effecttiming,5,0,5,0;x,SCREEN_CENTER_X+15;y,SCREEN_CENTER_Y-20;zoom,1.1;draworder,500;);
+		InitCommand=cmd(rotationx,-10;wag;effectmagnitude,0,0,2;effecttiming,5,0,5,0;x,SCREEN_CENTER_X+15;y,SCREEN_CENTER_Y-20;diffusealpha,0;zoom,1.4;draworder,500;accelerate,0.5;diffusealpha,1;zoom,1.1);
 		OffCommand=cmd(decelerate,0.5;zoom,1.4;diffusealpha,0;);
 	};
 };
 
+t[#t+1] = Def.ActorFrame {
+		LoadActor( "ScreenLogo decorations/3dlogo" )..{
+		InitCommand=cmd(rotationx,-10;wag;effectmagnitude,0,0,2;effecttiming,5,0,5,0;x,SCREEN_CENTER_X+15;y,SCREEN_CENTER_Y-20;diffusealpha,0;zoom,1.1;draworder,500;sleep,0.5;diffusealpha,0.5;decelerate,0.5;diffusealpha,0;zoom,1.4)
+	}
+};
+
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-		Text="Pre-Release Beta 1.2";
-		InitCommand=cmd(horizalign,left;diffuse,color("1,1,1,1");shadowlength,1;x,18;zoom,0.45;y,661+40);
+		Text="Beta 1.0";
+		InitCommand=cmd(horizalign,left;diffuse,color("1,1,1,1");shadowlengthy,2;x,18;zoom,0.45;y,661+40);
 				OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	 };
 
@@ -31,13 +37,13 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 		Text="DDR © Konami";
-		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlength,1;y,70;x,1190;zoom,0.45;y,661+20);
+		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlengthy,2;y,70;x,1190;zoom,0.45;y,661+20);
 				OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	 };
 	 
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 		Text="Theme by pupsi";
-		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlength,1;x,1190;zoom,0.45;y,661+40);
+		InitCommand=cmd(horizalign,right;diffuse,color("1,1,1,1");shadowlengthy,2;x,1190;zoom,0.45;y,661+40);
 				OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	 };
 

@@ -94,7 +94,7 @@ if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 
 t[#t+1]=Def.ActorFrame{
 	LoadActor("Score_Back_a")..{
-	InitCommand=cmd(zoom,1);
+	InitCommand=cmd(zoom,0.5);
 		OnCommand=cmd();
 		
 };
@@ -206,7 +206,7 @@ t[#t+1]=Def.ActorFrame{
 	};
 	
 	Def.Quad{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlength,1;y,10;horizalign,center;draworder,2;cropright,0.1;);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.35;shadowlengthy,2;y,9;horizalign,center;draworder,2;cropright,0.1;);
 
 		OnCommand=function(self)
 			local SongOrCourse, StepsOrTrail;
@@ -284,7 +284,7 @@ t[#t+1]=Def.ActorFrame{
 	
 	Def.RollingNumbers { -- Topscore
 			File = THEME:GetPathF("_@fot-newrodin pro db","30px");
-			InitCommand=cmd(shadowlength,0;zoom,0.65;y,12;horizalign,center;);
+			InitCommand=cmd(shadowlengthy,2;zoom,0.6;y,12;horizalign,center;);
 			OnCommand=function(self)
 				if GAMESTATE:IsCourseMode() then
 					self:Load("RollingNumbersCourseData");
@@ -309,13 +309,13 @@ t[#t+1]=Def.ActorFrame{
 				else
 					self:diffusealpha(0);
 				end
-				(cmd(x,-35))(self);
+				(cmd(x,-32))(self);
 			end;
 };	
 
 LoadFont("Common Normal") .. {
 	Text=PROFILEMAN:GetProfile(PLAYER_1):GetDisplayName();
-	InitCommand=cmd(maxwidth,300;zoom,0.75;y,45;horizalign,center;);
+	InitCommand=cmd(shadowlengthy,2;maxwidth,300;zoom,0.75;y,45;horizalign,center;);
 	OnCommand=function(self)
 		(cmd(x,-113+110))(self);
 	end;
@@ -336,7 +336,7 @@ if not GAMESTATE:IsCourseMode() then --Difficulty
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(maxwidth,240;zoom,0.75;y,-25;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(maxwidth,240;shadowlengthy,2;zoom,0.75;y,-25;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
 			(cmd(x,-125+120))(self);
 		end;
@@ -350,7 +350,7 @@ else
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(maxwidth,240;zoom,1.1;y,-25;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(maxwidth,240;shadowlengthy,2;zoom,1.1;y,-25;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
 			(cmd(x,-125))(self);
 		end;

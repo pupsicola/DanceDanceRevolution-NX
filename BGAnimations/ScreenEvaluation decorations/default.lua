@@ -172,7 +172,7 @@ t[#t+1] = Def.RollingNumbers {
 --Grade	
 	
 t[#t+1] = LoadActor("grade")..{
-	InitCommand=cmd(diffusealpha,1;draworder,11;addx,224;zoom,0.6;addy,99);
+	InitCommand=cmd(bob;effectmagnitude,0,0.5,0;effecttiming,1,0,1,0;diffusealpha,1;draworder,11;addx,224;zoom,0.6;addy,99);
 		OffCommand=cmd(linear,0.25;diffusealpha,0;);
 };
 t[#t+1] = Def.ActorFrame{
@@ -547,7 +547,7 @@ t[#t+1] = Def.ActorFrame {
 
 --song title--
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-250-30;y,SCREEN_CENTER_Y-215+5;zoom,1);
+	InitCommand=cmd(shadowlengthy,2;horizalign,left;x,SCREEN_CENTER_X-250-30;y,SCREEN_CENTER_Y-215+5;zoom,1);
 		OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	OnCommand=function(self)
 	local song = GAMESTATE:GetCurrentSong();
@@ -584,7 +584,7 @@ if not GAMESTATE:IsCourseMode() then
 
 --artist--
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-250-30;y,SCREEN_CENTER_Y-175;zoom,0.8;draworder,2);
+	InitCommand=cmd(shadowlengthy,2;horizalign,left;x,SCREEN_CENTER_X-250-30;y,SCREEN_CENTER_Y-175;zoom,0.8;draworder,2);
 		OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	OnCommand=function(self)
 	local song = GAMESTATE:GetCurrentSong();

@@ -10,7 +10,7 @@ t[#t+1] = Def.ActorFrame {
 
 t[#t+1] = Def.ActorFrame {
 	LoadFont("Common Normal")..{
-	InitCommand=cmd(horizalign,right;zoom,0.8;addy,2.5;addx,-17-25;maxwidth,SCREEN_WIDTH;playcommand,"Update");
+	InitCommand=cmd(horizalign,right;shadowlengthy,2;zoom,0.8;addy,2.5;addx,-17-25;maxwidth,SCREEN_WIDTH;playcommand,"Update");
 					UpdateCommand=function(self)
 					local hour, min = Hour(), Minute()
 					if hour > 12 then
@@ -23,7 +23,7 @@ t[#t+1] = Def.ActorFrame {
 	};
 	LoadFont("Common Normal")..{
 				Text="",
-				InitCommand=cmd(x,-17;y,4;horizalign,right;zoom,0.6;playcommand,"Update"),
+				InitCommand=cmd(x,-17;y,4;shadowlengthy,2;horizalign,right;zoom,0.6;playcommand,"Update"),
 				UpdateCommand=function(self)
 					local hour = Hour()
 					if hour < 12 then

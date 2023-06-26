@@ -46,7 +46,7 @@ t[#t+1] = Def.ActorFrame {
 
 --songinfo--
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,center;y,141+15+15;zoom,0.8;draworder,50;shadowlength,2;);
+	InitCommand=cmd(horizalign,center;y,141+15+15;zoom,0.8;draworder,50;shadowlengthy,2;);
 	OnCommand=cmd(diffusealpha,1);
 	OffCommand=cmd();
 	CurrentSongChangedMessageCommand=function(self)
@@ -63,7 +63,7 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 };
 --artist--
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(horizalign,center;y,167+22+15;zoom,0.6;draworder,50;shadowlength,2;);
+	InitCommand=cmd(horizalign,center;y,167+22+15;zoom,0.6;draworder,50;shadowlengthy,2;);
 	OnCommand=cmd(diffusealpha,0.5);
 	OffCommand=cmd();
 	CurrentSongChangedMessageCommand=function(self)

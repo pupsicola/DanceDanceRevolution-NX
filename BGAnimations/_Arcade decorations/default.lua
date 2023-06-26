@@ -21,7 +21,7 @@ t[#t+1] = Def.ActorFrame {
 		if bCanPlay or bReady then
 			--self:settext(THEME:GetString("ScreenTitleJoin","HelpTextJoin"));
 			self:settext("Press Start");
-			self:shadowlength,1;
+			self:shadowlengthy,2;
 			self:diffuseshift();
 			self:effectcolor1(1,1,1,0);
 			self:effectcolor2(1,1,1,1);

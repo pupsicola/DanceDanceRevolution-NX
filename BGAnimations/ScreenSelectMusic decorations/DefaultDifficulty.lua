@@ -83,26 +83,26 @@ for idx,diff in pairs(Difficulty) do
 
 --		LoadActor("cursorglow")..{--��ܪ����w
 --			ShowCommand=cmd(stoptweening;zoom,1.2;linear,0.2;diffusealpha,1;zoomy,0.78;zoomx,1);
---			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffusealpha,0);
---			InitCommand=cmd(x,28;y,tLocation[sDifficulty];shadowlength,0;zoom,1;diffuseshift;effectcolor2,color("1,1,1,0.5");effectcolor1,color("1,1,1,1"));
+--			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffusealpha,0);
+--			InitCommand=cmd(x,28;y,tLocation[sDifficulty];shadowlengthy,1;zoom,1;diffuseshift;effectcolor2,color("1,1,1,0.5");effectcolor1,color("1,1,1,1"));
 --			UnSelectCommand=cmd(stoptweening;decelerate,0.2;diffusealpha,0;zoom,1.2);
 --		};
 
 		LoadActor("StepsDisplay ticks")..{--���ϼ�
 			Name="Meter";
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty ););
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0.5"));
-			InitCommand=cmd(x,0-76;y,tLocation[sDifficulty]+1;shadowlength,0;zoom,0.44;);
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,CustomDifficultyToColor( sDifficulty ));
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "0.5,0.5,0.5,0.5"));
+			InitCommand=cmd(x,0-76;y,tLocation[sDifficulty]+1.3;shadowlengthy,2;zoom,0.44;);
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,CustomDifficultyToColor( sDifficulty ));
 		};
 		
 		LoadFont("_sf rounded pro 28px") .. { --���״y�z
 			Name="Meter";
 			Text=THEME:GetString("CustomDifficulty",ToEnumShortString(diff));
 			ShowCommand=cmd(stoptweening;linear,0.1;;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0.5" );zoomx,0.40);
-			InitCommand=cmd(horizalign,left;x,0-55;y,tLocation[sDifficulty]+1;shadowlength,0;zoomx,0.40;zoomy,0.4);
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "0.5,0.5,0.5,0.5" );zoomx,0.40);
+			InitCommand=cmd(horizalign,left;x,0-70;y,tLocation[sDifficulty]+2;shadowlengthy,2;zoomx,0.40;zoomy,0.4);
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
 		};
 
 		
@@ -110,9 +110,9 @@ for idx,diff in pairs(Difficulty) do
 			Name="Meter";
 			Text="0";
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" ));
-			InitCommand=cmd(x,0-80;y,tLocation[sDifficulty]+1;shadowlength,1;zoom,0.45;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,1.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" ));
+			InitCommand=cmd(x,0-85;y,tLocation[sDifficulty]+2;shadowlengthy,2;zoom,0.45;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
 		};
 		
 
@@ -174,9 +174,9 @@ for idx,diff in pairs(Difficulty) do
 		LoadActor("StepsDisplay ticks")..{
 			Name="Meter";
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty );zoomx,2.5);
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0.5");zoomx,0);
-			InitCommand=cmd(x,13-99410;y,tLocation[sDifficulty]+0.2;shadowlength,0;zoomy,0.45;zoomx,2.5);
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,CustomDifficultyToColor( sDifficulty );zoomx,0);
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0.5");zoomx,0);
+			InitCommand=cmd(x,13-99410;y,tLocation[sDifficulty]+0.2;shadowlengthy,1;zoomy,0.45;zoomx,2.5);
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,CustomDifficultyToColor( sDifficulty );zoomx,0);
 		};
 
 		--Difficulty Name Strings
@@ -185,9 +185,9 @@ for idx,diff in pairs(Difficulty) do
 			Text=THEME:GetString("CustomDifficulty",ToEnumShortString(diff));
 			--ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty );strokecolor,CustomDifficultyToDarkColor(sDifficulty);zoomx,0.40);
 			ShowCommand=cmd(stoptweening;linear,0.1;;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" );zoomx,0.40);
-			InitCommand=cmd(horizalign,left;x,42+370+2-168;y,tLocation[sDifficulty];shadowlength,0;zoomx,0.40;zoomy,0.4);
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" );zoomx,0.40);
+			InitCommand=cmd(horizalign,left;x,42+370+2-168;y,tLocation[sDifficulty];shadowlengthy,1;zoomx,0.40;zoomy,0.4);
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
 		};
 
 		
@@ -196,27 +196,27 @@ for idx,diff in pairs(Difficulty) do
 			Text="0"; --(sDifficulty == "Edit") and "0 Edits" or "0";
 			--ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "1,1,1,1" );strokecolor,CustomDifficultyToDarkColor(sDifficulty));
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" ));
-			InitCommand=cmd(x,-28+377-41.5;y,tLocation[sDifficulty]-7;shadowlength,1;zoomx,0.75;zoomy,0.8;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,1.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" ));
+			InitCommand=cmd(x,-28+377-41.5;y,tLocation[sDifficulty]-7;shadowlengthy,1;zoomx,0.75;zoomy,0.8;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
 		};
 		
 		LoadFont("_sf rounded pro 28px") .. {--only 1 ���״y�z
 			Name="Diff";
 			Text=THEME:GetString("CustomDifficulty",ToEnumShortString(diff));
-			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty );shadowlength,1;zoomx,1.25);
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0" );strokecolor, color( "0.1,0.1,0.1,0" );zoomx,1.20);
-			InitCommand=cmd(x,99230;y,0;shadowlength,1;zoomx,1.20;zoomy,1.2;);
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,1.1;diffuse,color( "0.52,0.52,0.52,0" );strokecolor, color( "0.15,0.15,0.15,0" );zoomx,1.20);
+			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty );shadowlengthy,1;zoomx,1.25);
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0" );strokecolor, color( "0.1,0.1,0.1,0" );zoomx,1.20);
+			InitCommand=cmd(x,99230;y,0;shadowlengthy,1;zoomx,1.20;zoomy,1.2;);
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1.1;diffuse,color( "0.52,0.52,0.52,0" );strokecolor, color( "0.15,0.15,0.15,0" );zoomx,1.20);
 		};
 		
 		LoadFont("_sf rounded pro 28px") .. {--only 1 �Ʀr
 			Name="Only1Meter";
 			Text="0"; --(sDifficulty == "Edit") and "0 Edits" or "0";
-			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "0,0,0,1" );shadowlength,1.1;);
-			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlength,0;diffuse,color( "0.5,0.5,0.5,0" );strokecolor, color( "0.1,0.1,0.1,0" ));
-			InitCommand=cmd(x,99230;y,80;shadowlength,1;zoomx,0.95;zoomy,0.95;shadowlength,1.1;);
-			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlength,1.1;diffuse,color( "0.70,0.70,0.70,0" );strokecolor, color( "0.15,0.15,0.15,0" ));
+			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "0,0,0,1" );shadowlengthy,1.1;);
+			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0" );strokecolor, color( "0.1,0.1,0.1,0" ));
+			InitCommand=cmd(x,99230;y,80;shadowlengthy,1;zoomx,0.95;zoomy,0.95;shadowlengthy,1.1;);
+			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1.1;diffuse,color( "0.70,0.70,0.70,0" );strokecolor, color( "0.15,0.15,0.15,0" ));
 		};
 		OffCommand=cmd(linear,0.5;diffusealpha,0;);
 	};

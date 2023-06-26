@@ -3,7 +3,7 @@ local offsetx = -404;
 
 
 t[#t+1] = LoadActor("DetailFrame")..{
-			InitCommand=cmd(shadowlength,0;zoom,0.65;x,SCREEN_CENTER_X+offsetx-40;y,SCREEN_CENTER_Y+213);
+			InitCommand=cmd(shadowlengthy,2;zoom,0.65;x,SCREEN_CENTER_X+offsetx-40;y,SCREEN_CENTER_Y+213);
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -31,7 +31,7 @@ t[#t+1] = LoadActor("DetailFrame")..{
 t[#t+1] = Def.ActorFrame {
 InitCommand=cmd(addy,-110);
 	LoadActor(THEME:GetPathG("Player","Spin FullCombo"))..{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.5;shadowlength,1;x,SCREEN_CENTER_X+28+5+offsetx;y,SCREEN_CENTER_Y+80+187;horizalign,center;draworder,2);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.5;shadowlengthy,2;x,SCREEN_CENTER_X+28+5+offsetx;y,SCREEN_CENTER_Y+80+187;horizalign,center;draworder,2);
 	OffCommand=cmd(bouncebegin,0.15;zoom,0);
 		BeginCommand=cmd(playcommand,"Set");
 		SetCommand=function(self)
@@ -145,7 +145,7 @@ InitCommand=cmd(addy,-110);
 t[#t+1] = Def.ActorFrame {
 InitCommand=cmd(addy,-110);
 	Def.Quad{
-	InitCommand=cmd(player,PLAYER_1;zoom,0.6;shadowlength,1;x,SCREEN_CENTER_X+offsetx+5;y,SCREEN_CENTER_Y+100+167.5;horizalign,center;draworder,2);
+	InitCommand=cmd(player,PLAYER_1;zoom,0.6;bob;effectmagnitude,0,0.5,0;effecttiming,1,0,1,0;shadowlengthy,2;x,SCREEN_CENTER_X+offsetx+5;y,SCREEN_CENTER_Y+100+167.5;horizalign,center;draworder,2);
 	OffCommand=cmd(bouncebegin,0.15;zoom,0);
 		BeginCommand=cmd(playcommand,"Set");
 		SetCommand=function(self)
@@ -325,7 +325,7 @@ function TopRecord(pn) --回傳最高分的那個紀錄
 end;
 
 t[#t+1] = LoadFont("_helvetica-condensed-light 24px")..{
-			InitCommand=cmd(shadowlength,0;zoom,0.48;maxwidth,215;cropright,0.5;x,SCREEN_CENTER_X+15+offsetx;y,SCREEN_CENTER_Y+175;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.48;maxwidth,215;cropright,0.5;x,SCREEN_CENTER_X+15+offsetx;y,SCREEN_CENTER_Y+175;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -354,7 +354,7 @@ t[#t+1] = LoadFont("_helvetica-condensed-light 24px")..{
 
 t[#t+1] = Def.RollingNumbers { -- Topscore
 			File = THEME:GetPathF("_avantgarde-book","40px");
-			InitCommand=cmd(shadowlength,0;zoom,0.8;x,SCREEN_CENTER_X-29+offsetx;y,SCREEN_CENTER_Y+158;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.8;x,SCREEN_CENTER_X-29+offsetx;y,SCREEN_CENTER_Y+158;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -393,7 +393,7 @@ t[#t+1] = Def.RollingNumbers { -- Topscore
 
 t[#t+1] = Def.RollingNumbers { -- topW1
 			File = THEME:GetPathF("_avantgarde-book","40px");
-			InitCommand=cmd(shadowlength,0;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+199;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+199;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -432,7 +432,7 @@ t[#t+1] = Def.RollingNumbers { -- topW1
 
 t[#t+1] = Def.RollingNumbers { -- topW2
 			File = THEME:GetPathF("_avantgarde-book","40px");
-			InitCommand=cmd(shadowlength,0;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+219;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+219;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -471,7 +471,7 @@ t[#t+1] = Def.RollingNumbers { -- topW2
 
 t[#t+1] = Def.RollingNumbers { -- topW3
 			File = THEME:GetPathF("_avantgarde-book","40px");
-			InitCommand=cmd(shadowlength,0;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+239;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+239;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -509,7 +509,7 @@ t[#t+1] = Def.RollingNumbers { -- topW3
 
 t[#t+1] = Def.RollingNumbers { -- topW4
 			File = THEME:GetPathF("_avantgarde-book","40px");
-			InitCommand=cmd(shadowlength,0;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+259;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+259;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -547,7 +547,7 @@ t[#t+1] = Def.RollingNumbers { -- topW4
 
 t[#t+1] = Def.RollingNumbers { -- topOK
 			File = THEME:GetPathF("_avantgarde-book","40px");
-			InitCommand=cmd(shadowlength,0;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+279;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+279;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)
@@ -585,7 +585,7 @@ t[#t+1] = Def.RollingNumbers { -- topOK
 
 t[#t+1] = Def.RollingNumbers { -- topMiss
 			File = THEME:GetPathF("_avantgarde-book","40px");
-			InitCommand=cmd(shadowlength,0;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+299;horizalign,right;strokecolor,Color("Outline"));
+			InitCommand=cmd(shadowlengthy,2;zoom,0.7;x,SCREEN_CENTER_X+offsetx+50;y,SCREEN_CENTER_Y+299;horizalign,right;strokecolor,Color("Outline"));
 			BeginCommand=cmd(playcommand,"Set");
 			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
 			SetCommand=function(self)

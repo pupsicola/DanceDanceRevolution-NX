@@ -9,7 +9,7 @@ t[#t+1] = Def.ActorFrame {
 
 		LoadActor("jacket") .. {
 			InitCommand=cmd();
-			OnCommand=cmd(Center;zoom,2.665;diffusealpha,0.4;)
+			OnCommand=cmd(Center;zoom,2.665;diffusealpha,0.5;)
 		};
 		
 		Def.ActorFrame{
