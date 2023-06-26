@@ -45,6 +45,12 @@ local Prefs =
 		Choices = { "Default", "Gold", "A20 Blue", "A3 Blue"},
 		Values = { "Default", "Gold", "A20 Blue", "A3 Blue" }
 	},
+	BackgroundColor=
+	{
+		Default = "DDR NX",
+		Choices = { "DDR NX", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold" },
+		Values = { "DDR NX", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold" }
+	},
 	JudgmentStyle=
 	{
 		Default = "Default",
@@ -82,7 +88,8 @@ function InitUserPrefs()
 		FlashyCombos = false,
 		UserPrefComboUnderField = true,
 		UserPrefFancyUIBG = true,
-		UserPrefTimingDisplay = true
+		UserPrefTimingDisplay = true,
+		UserPrefBackgroundColor = 'DDR NX'
 	}
 	for k, v in pairs(Prefs) do
 		-- kind of xxx

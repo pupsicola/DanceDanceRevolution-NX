@@ -94,7 +94,7 @@ if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 
 t[#t+1]=Def.ActorFrame{
 	LoadActor("Score_Back_a")..{
-	InitCommand=cmd(x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+200;zoom,1);
+	InitCommand=cmd(x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+180;zoom,0.5);
 		OnCommand=cmd(x,SCREEN_LEFT+OffsetX);
 		
 };
