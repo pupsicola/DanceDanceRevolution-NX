@@ -3,7 +3,7 @@ local t = Def.ActorFrame{};
 t[#t+1] = Def.ActorFrame {
 InitCommand=cmd();
 		LoadActor( "ScreenLogo decorations/3dlogo" )..{
-		InitCommand=cmd(rotationx,-10;x,SCREEN_CENTER_X-140;y,SCREEN_CENTER_Y+7;diffusealpha,0;zoom,0.8;draworder,500;addx,-100;decelerate,0.5;diffusealpha,1;addx,100);
+		InitCommand=cmd(wag;effectmagnitude,0,0,2;effecttiming,5,0,5,0;rotationx,-10;x,SCREEN_CENTER_X-140;y,SCREEN_CENTER_Y+7;diffusealpha,0;zoom,0.8;draworder,500;addx,-100;decelerate,0.5;diffusealpha,1;addx,100);
 		OffCommand=cmd(decelerate,0.25;addx,-100;diffusealpha,0;);
 	};
 };
