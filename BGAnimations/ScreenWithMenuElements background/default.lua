@@ -12,28 +12,28 @@ t[#t+1] = Def.ActorFrame {
 		Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("BackgroundColor") == "A3 Blue");
 		LoadActor("a3blue")..{
-		OnCommand=cmd(diffusealpha,1;Center;zoomto,2000,SCREEN_HEIGHT;)
+		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
 		};
 		};
 		
 		Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("BackgroundColor") == "A3 Gold");
 		LoadActor("a3gold")..{
-		OnCommand=cmd(diffusealpha,1;Center;zoomto,2000,SCREEN_HEIGHT;)
+		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
 		};
 		};
 		
 		Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("BackgroundColor") == "A20 Blue");
 		LoadActor("a20blue")..{
-		OnCommand=cmd(diffusealpha,1;Center;zoomto,2000,SCREEN_HEIGHT;)
+		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
 		};
 		};
 		
 		Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("BackgroundColor") == "A20 Gold");
 		LoadActor("a20gold")..{
-		OnCommand=cmd(diffusealpha,1;Center;zoomto,2000,SCREEN_HEIGHT;)
+		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
 		};
 		};
 		
