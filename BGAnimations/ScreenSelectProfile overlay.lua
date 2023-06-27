@@ -221,7 +221,7 @@ function LoadPlayerStuff(Player)
 	
 	t[#t+1] = LoadFont("_@fot-newrodin pro db 40px") .. {
 		Name = 'SelectedProfileText';
-		InitCommand=cmd(horizalign,center;y,-160;zoom,0.6;diffuse,color("1,1,1,0");strokecolor,Color("Outline");maxwidth,300);
+		InitCommand=cmd(horizalign,center;shadowlengthy,2;y,-160;zoom,0.6;diffuse,color("1,1,1,0");strokecolor,Color("Outline");maxwidth,300);
 		OnCommand=cmd(diffusealpha,1);
 		OffCommand=cmd(stoptweening;linear,0.25;diffusealpha,0);
 	};
@@ -230,7 +230,7 @@ function LoadPlayerStuff(Player)
 
 	t[#t+1] = LoadFont("_@fot-newrodin pro db 40px") .. {
 		Name = 'SelectedProfileLevel';
-		InitCommand=cmd(draworder,1;zoom,0;y,-80-7-3;diffuse,color("1,1,1,1"));
+		InitCommand=cmd(draworder,1;shadowlengthy,2;zoom,0;y,-80-7-3;diffuse,color("1,1,1,1"));
 		OnCommand=cmd(diffusealpha,1;zoom,0.6;);
 		OffCommand=cmd(stoptweening;linear,0.25;diffusealpha,0);
 	};

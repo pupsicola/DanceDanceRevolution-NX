@@ -8,7 +8,7 @@ OffCommand=cmd(linear,0.25;diffusealpha,0;);
 
 t[#t+1] = Def.BitmapText {
 		Font = "Common Normal",
-		InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-620;y,SCREEN_CENTER_Y+343;zoom,0.545;shadowlength,0;diffusealpha,1;),
+		InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-620;y,SCREEN_CENTER_Y+343;zoom,0.545;shadowlengthy,2;diffusealpha,1;),
 		OnCommand=function(self)
 			self:settext("&START; Confirm   &BACK; Exit   &SELECT; Song Options   &LEFT; or &RIGHT; Change Selection   &UP;&UP; or &DOWN;&DOWN; Change Difficulty   &LEFT; + &RIGHT; Change Sort")
 			end;	

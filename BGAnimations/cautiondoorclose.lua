@@ -12,7 +12,7 @@ t[#t+1] = Def.ActorFrame {
 
 t[#t+1] = Def.ActorFrame {
 	LoadActor(THEME:GetPathB("","_door/caution"))..{
-	InitCommand=cmd(draworder,7;x,SCREEN_CENTER_X-0;y,SCREEN_CENTER_Y-0;zoom,1.25;diffusealpha,0;);
+	InitCommand=cmd(draworder,7;x,SCREEN_CENTER_X-0;y,SCREEN_CENTER_Y-0;zoom,1.25;diffusealpha,0;bob;effectmagnitude,0,4,0;effecttiming,4,0,4,0;);
 	OnCommand=cmd(sleep,0.15;decelerate,1;zoom,1;diffusealpha,1;sleep,1.65;decelerate,0.5;zoom,0.75;diffusealpha,0;);
 	};
 };
