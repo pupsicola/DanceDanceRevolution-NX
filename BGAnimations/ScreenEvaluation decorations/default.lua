@@ -28,7 +28,7 @@ for ip, p in ipairs(GAMESTATE:GetHumanPlayers()) do
 	-- Options
 	eval_parts[#eval_parts+1] = Def.BitmapText {
 		Font = "Common Condensed",
-		InitCommand=cmd(horizalign,left;x,260;y,635;zoom,0.6;shadowlength,1;diffusealpha,0.5;),
+		InitCommand=cmd(horizalign,left;x,260;y,635;zoom,0.6;shadowlengthy,2;diffusealpha,0.5;),
 		OnCommand=function(self)
 			self:settext(GAMESTATE:GetPlayerState(p):GetPlayerOptionsString(0))
 			end;		
@@ -36,7 +36,7 @@ for ip, p in ipairs(GAMESTATE:GetHumanPlayers()) do
 		};
 	eval_parts[#eval_parts+1] = Def.BitmapText {
 		Font = "Common Condensed",
-		InitCommand=cmd(horizalign,left;x,161;y,635;zoom,0.6;shadowlength,1;diffusealpha,0.75;),
+		InitCommand=cmd(horizalign,left;x,161;y,635;zoom,0.6;shadowlengthy,2;diffusealpha,0.75;),
 		OnCommand=function(self)
 			self:settext("Song Options:")
 			end;	
@@ -158,7 +158,7 @@ t[#t+1] = LoadActor("_songinfobg")..{
 
 t[#t+1] = Def.RollingNumbers {
 			File = THEME:GetPathF("ScreenEvaluation", "ScoreNumber");
-			InitCommand=cmd(x,SCREEN_CENTER_X-13;y,SCREEN_CENTER_Y-102;zoom,0.87;player,PLAYER_1;playcommand,"Set");
+			InitCommand=cmd(shadowlengthy,3;x,SCREEN_CENTER_X-13;y,SCREEN_CENTER_Y-102;zoom,0.87;player,PLAYER_1;playcommand,"Set");
 			SetCommand = function(self)
 				local score = STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):GetScore();
 				self:Load("RollingNumbersEvaluation");
@@ -349,7 +349,7 @@ t[#t+1] = Def.ActorFrame{
 
 --style text
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
-	InitCommand=cmd(x,SCREEN_CENTER_X-521;y,SCREEN_CENTER_Y-175;visible,GAMESTATE:IsHumanPlayer(PLAYER_1)diffusealpha,1;shadowlength,1;zoom,0.45;horizalign,right;);
+	InitCommand=cmd(x,SCREEN_CENTER_X-521;y,SCREEN_CENTER_Y-175;visible,GAMESTATE:IsHumanPlayer(PLAYER_1)diffusealpha,1;shadowlengthy,2;zoom,0.45;horizalign,right;);
 		OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	OnCommand=function(self)
 	local style = GAMESTATE:GetCurrentStyle();
@@ -745,12 +745,12 @@ t[#t+1] = Def.ActorFrame {
 
 -- t[#t+1] = LoadFont("Common Normal")..{
 		-- Text="StreamActualValue:"..tostring(StreamActualValue);
-		-- InitCommand=cmd(Center;diffuse,color("1,1,1,1");shadowlength,1;y,620);
+		-- InitCommand=cmd(Center;diffuse,color("1,1,1,1");shadowlengthy,2;y,620);
 		-- OffCommand=cmd(linear,0.15;diffusealpha,0);
 	-- };
 -- t[#t+1] = LoadFont("Common Normal")..{
 		-- Text="ChaosActualValue:"..tostring(ChaosActualValue);
-		-- InitCommand=cmd(Center;diffuse,color("1,1,1,1");shadowlength,1;y,600);
+		-- InitCommand=cmd(Center;diffuse,color("1,1,1,1");shadowlengthy,2;y,600);
 		-- OffCommand=cmd(linear,0.15;diffusealpha,0);
 	-- };
 

@@ -21,8 +21,9 @@ t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 	 };
 
 	t[#t+1] = Def.ActorFrame {
+		InitCommand=cmd(diffusealpha,0;x,SCREEN_CENTER_X+335;y,SCREEN_CENTER_Y+190;addx,-100;addz,-50;fov,90;rotationy,15;zoom,0.8;decelerate,0.5;diffusealpha,1;addx,100;addz,50;);
 		LoadActor(THEME:GetPathB("","_Arcade decorations/bg"))..{
-			OnCommand=cmd(zoom,0.8;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+190);
+			OnCommand=cmd();
 					OffCommand=cmd(linear,0.25;diffusealpha,0;);
 		};
 	};
