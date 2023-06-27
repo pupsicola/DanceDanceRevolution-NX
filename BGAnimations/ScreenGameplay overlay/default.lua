@@ -50,6 +50,14 @@ t[#t+1] = Def.ActorFrame{
 };
 };
 
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Cyberia Style");
+		LoadActor("cyberiaframe")..{
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_TOP+25;zoom,1;);
+		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
+};
+};
+
 
 for pn in ivalues(GAMESTATE:GetHumanPlayers()) do
 	t[#t+1] = LoadActor("FullCombo", pn) .. {

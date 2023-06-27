@@ -30,6 +30,13 @@ t[#t+1] = Def.ActorFrame{
 	}
 	};
 	
+	t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Cyberia Style");
+		LoadActor("cyberia")..{
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_CENTER_Y+292;zoom,0.75;);
+	}
+	};
+	
 	
 
 

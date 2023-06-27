@@ -42,8 +42,8 @@ local Prefs =
 	FrameStyle=
 	{
 		Default = "Default",
-		Choices = { "Default", "Gold", "A20 Blue", "A3 Blue"},
-		Values = { "Default", "Gold", "A20 Blue", "A3 Blue" }
+		Choices = { "Default", "Gold", "A20 Blue", "A3 Blue", "Cyberia Style" },
+		Values = { "Default", "Gold", "A20 Blue", "A3 Blue", "Cyberia Style" }
 	},
 	BackgroundColor=
 	{
