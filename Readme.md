@@ -1,4 +1,4 @@
-![Alt Text](https://i.ibb.co/Tb6VnDT/splash.png)
+![Alt Text](https://i.ibb.co/JmsRk2C/splash.png)
 
 DanceDanceRevolution NX is a StepMania 5.0.12 - StepMania 5.1 theme based off the excellent DDR A theme released by MadkaT, Risk, pkwp, and KENp.
 
