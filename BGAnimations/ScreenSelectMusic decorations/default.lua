@@ -15,12 +15,12 @@ t[#t+1] = Def.BitmapText {
 		OffCommand=cmd(zoom,0;);
 		};
 
-t[#t+1] = Def.ActorFrame {
-		LoadActor("fade") .. {
-		OnCommand=cmd(draworder,-500;diffusealpha,1;zoom,2;x,SCREEN_CENTER_X+325;y,SCREEN_CENTER_Y);
-		OffCommand=cmd(linear,0.25;diffusealpha,0;);
-		};
-};
+-- t[#t+1] = Def.ActorFrame {
+		-- LoadActor("fade") .. {
+		-- OnCommand=cmd(draworder,-500;diffusealpha,1;zoom,2;x,SCREEN_CENTER_X+325;y,SCREEN_CENTER_Y);
+		-- OffCommand=cmd(linear,0.25;diffusealpha,0;);
+		-- };
+-- };
 
 t[#t+1]=LoadActor("flash") .. {
 			OnCommand=cmd(diffusealpha,0.25;blend,'BlendMode_Add';zoom,1.3;Center;heartbeat;effectclock,'beat';effectmagnitude,2,1.01,1.0;effectoffset,0.5;)

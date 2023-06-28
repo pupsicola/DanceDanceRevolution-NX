@@ -19,7 +19,7 @@ t[#t+1] = Def.ActorFrame{
 };
 
 t[#t+1] = Def.ActorFrame{
-		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Default");
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "DDR NX");
 		LoadActor("frame")..{
 		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_TOP+25;zoom,1;);
 		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
@@ -27,7 +27,7 @@ t[#t+1] = Def.ActorFrame{
 };
 
 t[#t+1] = Def.ActorFrame{
-		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "Gold");
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "A20 Minus");
 		LoadActor("goldframe")..{
 		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_TOP+25;zoom,1;);
 		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
@@ -35,8 +35,24 @@ t[#t+1] = Def.ActorFrame{
 };
 
 t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "A3 Gold");
+		LoadActor("a3goldframe")..{
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_TOP+25;zoom,1;);
+		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
+};
+};
+
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "A20 Gold");
+		LoadActor("a20goldframe")..{
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_TOP+25;zoom,1;);
+		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
+};
+};
+
+t[#t+1] = Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "A20 Blue");
-		LoadActor("a20frame")..{
+		LoadActor("a20blueframe")..{
 		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_TOP+25;zoom,1;);
 		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
 };

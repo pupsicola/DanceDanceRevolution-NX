@@ -41,15 +41,15 @@ local Prefs =
 	},
 	FrameStyle=
 	{
-		Default = "Default",
-		Choices = { "Default", "Gold", "Supernova", "A20 Blue", "A3 Blue", "Cyberia Style" },
-		Values = { "Default", "Gold", "Supernova", "A20 Blue", "A3 Blue", "Cyberia Style" }
+		Default = "NX",
+		Choices = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" },
+		Values = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" }
 	},
 	BackgroundColor=
 	{
-		Default = "DDR NX",
-		Choices = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style" },
-		Values = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style" }
+		Default = "NX",
+		Choices = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" },
+		Values = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" }
 	},
 	JudgmentStyle=
 	{

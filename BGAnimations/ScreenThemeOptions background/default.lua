@@ -22,10 +22,18 @@ t[#t+1] = Def.ActorFrame {
 		OnCommand=cmd(diffusealpha,1;Center;zoomto,2000,SCREEN_HEIGHT;)
 		};
 		};
+	
 		
 		Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("BackgroundColor") == "Supernova");
 		LoadActor("supernova")..{
+		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
+		};
+		};
+		
+		Def.ActorFrame{
+		InitCommand=cmd(visible,ThemePrefs.Get("BackgroundColor") == "A20 Minus");
+		LoadActor("a20minus")..{
 		OnCommand=cmd(diffusealpha,1;Center;zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;)
 		};
 		};
