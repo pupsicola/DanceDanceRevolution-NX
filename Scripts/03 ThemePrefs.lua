@@ -42,14 +42,14 @@ local Prefs =
 	FrameStyle=
 	{
 		Default = "Default",
-		Choices = { "Default", "Gold", "A20 Blue", "A3 Blue", "Cyberia Style" },
-		Values = { "Default", "Gold", "A20 Blue", "A3 Blue", "Cyberia Style" }
+		Choices = { "Default", "Gold", "Supernova", "A20 Blue", "A3 Blue", "Cyberia Style" },
+		Values = { "Default", "Gold", "Supernova", "A20 Blue", "A3 Blue", "Cyberia Style" }
 	},
 	BackgroundColor=
 	{
 		Default = "DDR NX",
-		Choices = { "DDR NX", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold" },
-		Values = { "DDR NX", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold" }
+		Choices = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style" },
+		Values = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style" }
 	},
 	JudgmentStyle=
 	{
