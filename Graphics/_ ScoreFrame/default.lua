@@ -3,7 +3,7 @@ local t = Def.ActorFrame{};
 --P1 ScoreFrame
 if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 t[#t+1] = Def.ActorFrame{
-		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "DDR NX");
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "NX");
 		LoadActor("normal")..{
 		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_CENTER_Y+292;zoom,0.75;);
 	}
