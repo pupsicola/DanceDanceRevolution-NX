@@ -3,8 +3,8 @@ local t = Def.ActorFrame {};
 
 t[#t+1] = LoadActor("judgment");
 
-if ThemePrefs.Get("SlowFast") == "Off" then
-	if ThemePrefs.Get("SlowFast") == "On" then
+if ReadPrefFromFile("UserPrefGameplayShowFastSlow") ~= nil then
+	if GetUserPrefB("UserPrefGameplayShowFastSlow") then
 		t[#t+1] = LoadActor("timingbg");
 	end
 end

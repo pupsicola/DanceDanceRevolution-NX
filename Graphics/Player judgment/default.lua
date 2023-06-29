@@ -46,12 +46,23 @@ local TNSFrames = {
 	TapNoteScore_Miss = 5;
 };
 
+
+local showFasrSlow = true;
+
+if ReadPrefFromFile("UserPrefGameplayShowFastSlow") ~= nil then
+	if GetUserPrefB("UserPrefGameplayShowFastSlow") then
+		showFasrSlow = true;
+	else
+		showFasrSlow = false;
+	end
+end
+
 local t = Def.ActorFrame {};
 t[#t+1] = Def.ActorFrame {
-	InitCommand=cmd(visible,ThemePrefs.Get("SlowFast") == "On");
 	LoadActor("deviation")..{
 		InitCommand=function(s) s:diffusealpha(0):animate(false):x(80) end,
 		JudgmentMessageCommand=function(self, params)
+			if not showFasrSlow then return end;
 
 			
 			if 		params.TapNoteScore == 'TapNoteScore_W1' 
