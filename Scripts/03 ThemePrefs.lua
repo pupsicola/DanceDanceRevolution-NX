@@ -43,13 +43,13 @@ local Prefs =
 	{
 		Default = "NX",
 		Choices = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" },
-		Values = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" }
+		Values = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" }
 	},
 	BackgroundColor=
 	{
 		Default = "NX",
 		Choices = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" },
-		Values = { "DDR NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" }
+		Values = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" }
 	},
 	JudgmentStyle=
 	{
