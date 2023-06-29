@@ -19,7 +19,7 @@ t[#t+1] = Def.ActorFrame{
 };
 
 t[#t+1] = Def.ActorFrame{
-		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "DDR NX");
+		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "NX");
 		LoadActor("frame")..{
 		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX");y,SCREEN_TOP+25;zoom,1;);
 		OnCommand=cmd(addy,-100;decelerate,2;addy,100);
