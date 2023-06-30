@@ -70,7 +70,7 @@ Branch = {
 		if PROFILEMAN:GetNumLocalProfiles() >= 1 then
 			return "ScreenSelectProfile"
 		else
-			return "ScreenSelectMusic"
+			return "ScreenOptionsManageProfiles"
 		end
 	end,
 	Profile = function()

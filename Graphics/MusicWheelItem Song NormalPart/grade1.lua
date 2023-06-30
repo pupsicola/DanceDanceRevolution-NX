@@ -95,15 +95,6 @@ local function setGradeP1(self,param)
 									break;
 							end;
 					else
-						
-						-- if hasUsedBattery then
-							-- if i==temp then
-								-- FullComboRank = 7;
-								-- break;
-							-- end;
-						-- else
-							-- FullComboRank = 8;
-						-- end
 						if topscore:GetGrade()~="Grade_Failed" then
 							if hasUsedBattery  then
 								scoresHasUsedBatteryAndCleared = true;
@@ -120,65 +111,44 @@ local function setGradeP1(self,param)
 			if scoresHasUsedBatteryAndCleared and FullComboRank == 8 then
 				FullComboRank = 7;
 			end
-			
-			
-			
-			
-		end
-		if ClearedRank == 0 then --NoPlayed
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","MFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,0;effectcolor2,1,1,1,0;effectperiod,5.0))(self);
-		elseif ClearedRank == 7 then --E
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","Failed"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.8;effectperiod,1.0))(self);
-		elseif FullComboRank == 8 then -- 8=NoFCWithLifeBar
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","NoFCWithLifeBar"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.8;effectperiod,2))(self);
-		elseif FullComboRank == 7 then --7=NoFCWithBatteryLives
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","NoFCWithBatteryLives"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,0.1))(self);
-		elseif FullComboRank == 6 then --6=GoodOldFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GoodFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
-		elseif FullComboRank == 5 then -- 5=GoodFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GoodFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
-		elseif FullComboRank == 4 then -- 4=GreatOldFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GreatFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
-		elseif FullComboRank == 3 then --3=GreatFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GreatFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
-		elseif FullComboRank == 2 then --2=PFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","PFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
-		elseif FullComboRank == 1 then --1=MFC
-			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","MFC"));
-			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.7;effectperiod,0.1))(self);
-
 		end
 		
-		-- if ClearedRank == 7 then --E
-			-- (cmd(diffuseshift;effectcolor1,0,0,0,0.65;effectcolor2,0,0,0,1;effectperiod,1.1))(self);
-		-- elseif ClearedRank == 6 then --D
-			-- (cmd(diffuseshift;effectcolor1,0.6,0,0,0.65;effectcolor2,0.8,0,0,1;effectperiod,0.5))(self);
-		-- elseif ClearedRank == 5 then --C
-			-- (cmd(diffuseshift;effectcolor1,1,0,1,0.65;effectcolor2,1,0,1,0.35;effectperiod,0.5))(self);
-		-- elseif ClearedRank == 4 then --B
-			-- (cmd(diffuseshift;effectcolor1,0,0.3,1,0.65;effectcolor2,0,0.5,1,0.9;effectperiod,0.1))(self);
-		-- elseif ClearedRank == 3 then --A
-			-- (cmd(diffuseshift;effectcolor1,1,1,0.2,0.65;effectcolor2,1,1,0.2,0.35;effectperiod,0.1))(self);
-		-- elseif ClearedRank == 2 then --AA
-			-- (cmd(diffuseshift;effectcolor1,1,1,0.6,0.65;effectcolor2,1,1,0.7,1;effectperiod,0.1))(self);
-		-- elseif ClearedRank == 1 then --AAA
-			-- (cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.8;effectperiod,0.1))(self);
-		-- elseif ClearedRank == 0 then
-			-- (cmd(diffuseshift;effectcolor1,1,1,1,0;effectcolor2,1,1,1,0;effectperiod,0.1))(self);
-		-- end
-	  
+		local effecttime = 0.09;
+		
+		if ClearedRank == 0 then --NoPlayed
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","MFC"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,0;effectcolor2,1,1,1,0;effectperiod,effecttime))(self);
+		elseif ClearedRank == 7 then --E
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","Failed"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,0.65;effectcolor2,1,1,1,1;effectperiod,1.1))(self);
+		elseif FullComboRank == 8 then -- 8=NoFCWithLifeBar
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","NoFCWithLifeBar"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,effecttime))(self);
+		elseif FullComboRank == 7 then --7=NoFCWithBatteryLives
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","NoFCWithBatteryLives"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,1;effectperiod,effecttime))(self);
+		elseif FullComboRank == 6 then --6=GoodOldFC
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GoodFC"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(self);
+		elseif FullComboRank == 5 then -- 5=GoodFC
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GoodFC"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(self);
+		elseif FullComboRank == 4 then -- 4=GreatOldFC
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GreatFC"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(self);
+		elseif FullComboRank == 3 then --3=GreatFC
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","GreatFC"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.6;effectperiod,effecttime))(self);
+		elseif FullComboRank == 2 then --2=PFC
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","PFC"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.70;effectperiod,effecttime))(self);
+		elseif FullComboRank == 1 then --1=MFC
+			self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","MFC"));
+			(cmd(diffuseshift;effectcolor1,1,1,1,1;effectcolor2,1,1,1,0.70;effectperiod,effecttime))(self);
 
+		end
   	else
-		self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","MFC"));
+		self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/lamp/ClearedMark","MFC"));
   		(cmd(diffuseshift;effectcolor1,1,1,1,0;effectcolor2,1,1,1,0;effectperiod,0.1))(self);
   	end;
   end;
@@ -186,21 +156,13 @@ local function setGradeP1(self,param)
 end;
 
 
-
-
 t[#t+1] = Def.ActorFrame{
-	InitCommand=function(self)
-		self:x(0)
-		self:y(0)
-	end;
 	Def.ActorFrame{
 		InitCommand=cmd(draworder,0);
-		--LoadActor("AllCleared_All")..{
 		Def.Quad{
 			SetCommand=function(self,param)
 				self.ParamSong = param.Song
 				setGradeP1(self)
-				self:zoom(1)
 			end;
 			CurrentStepsP1ChangedMessageCommand=function(self) setGradeP1(self) end;
 			CurrentSongChangedMessageCommand=function(self) setGradeP1(self) end;
@@ -208,18 +170,4 @@ t[#t+1] = Def.ActorFrame{
 	};
 };
 
--- t[#t+1] = Def.ActorFrame{
-	-- InitCommand=cmd(zoomx,2.2;zoomy,1.0;draworder,2;y,-12);
-	-- Def.BitmapText{
-		-- InitCommand=cmd(diffuse,color("#FFFFFF");strokecolor,color("#000000"));
-		-- Font="_itc machine std 20px";
-		-- SetCommand=function(self,param)
-			-- self.ParamSong = param.Song
-			-- self:settext(setGradeP1(self))
-			
-		-- end;
-		-- CurrentStepsP1ChangedMessageCommand=function(self) self:settext(setGradeP1(self)) end;
-		-- CurrentSongChangedMessageCommand=function(self) self:settext(setGradeP1(self)) end;
-	-- };
--- };
 return t;
