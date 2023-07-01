@@ -51,12 +51,6 @@ local Prefs =
 		Choices = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" },
 		Values = { "NX", "Supernova", "A20 Blue", "A20 Gold", "A3 Blue", "A3 Gold", "Cyberia Style", "A20 Minus" }
 	},
-	JudgmentStyle=
-	{
-		Default = "Default",
-		Choices = { "Default", "Gold", },
-		Values = { "Default", "Gold", }
-	},
 }
 
 ThemePrefs.InitAll(Prefs)
