@@ -317,6 +317,15 @@ t[#t+1]=Def.ActorFrame{
 			end;
 };	
 
+
+	LoadFont("Common Normal") .. {
+	Text=GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter();
+	InitCommand=cmd(shadowlengthy,2;maxwidth,300;zoom,0.75;x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+153.5;horizalign,center;);
+		OnCommand=function(self)
+			(cmd(x,SCREEN_LEFT+OffsetX-113+140))(self);
+		end;
+	};
+
 LoadFont("Common Normal") .. {
 	Text=PROFILEMAN:GetProfile(PLAYER_1):GetDisplayName();
 	InitCommand=cmd(shadowlengthy,2;maxwidth,300;zoom,0.75;x,SCREEN_LEFT-OffsetX;y,SCREEN_CENTER_Y+225;horizalign,center;);
@@ -584,9 +593,9 @@ if not GAMESTATE:IsCourseMode() then --Difficulty
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(shadowlengthy,2;maxwidth,240;zoom,0.75;y,SCREEN_CENTER_Y+153.5;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(shadowlengthy,2;maxwidth,80;zoom,0.75;y,SCREEN_CENTER_Y+153.5;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
-			(cmd(x,SCREEN_LEFT+OffsetX-125+120))(self);
+			(cmd(x,SCREEN_LEFT+OffsetX-125+105))(self);
 		end;
 	};
 
@@ -607,7 +616,7 @@ else
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(shadowlengthy,2;maxwidth,240;zoom,1.1;x,SCREEN_LEFT-OffsetX-125;y,SCREEN_CENTER_Y+150;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(shadowlengthy,2;maxwidth,80;zoom,1.1;x,SCREEN_LEFT-OffsetX-125;y,SCREEN_CENTER_Y+150;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
 			(cmd(x,SCREEN_LEFT+OffsetX-125))(self);
 		end;
@@ -617,7 +626,7 @@ else
 	if GAMESTATE:IsPlayerEnabled(PLAYER_2) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_2):GetDifficulty()));
-		InitCommand=cmd(maxwidth,240;zoom,1.1;x,SCREEN_RIGHT+OffsetX+125;y,SCREEN_CENTER_Y+150;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_2):GetDifficulty()) ));
+		InitCommand=cmd(maxwidth,80;zoom,1.1;x,SCREEN_RIGHT+OffsetX+125;y,SCREEN_CENTER_Y+150;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentTrail(PLAYER_2):GetDifficulty()) ));
 		OnCommand=function(self)
 			(cmd(x,SCREEN_RIGHT-OffsetX+125))(self);
 		end;

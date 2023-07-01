@@ -23,11 +23,17 @@ t[#t+1] = Def.ActorFrame{
 };
 };
 
-
-
 t[#t+1] = LoadActor("title")..{
 	OnCommand=cmd(diffusealpha,0.5;x,SCREEN_RIGHT-140;y,SCREEN_TOP+34;draworder,1;zoom,0.7;diffuseblink;);
 	OffCommand=cmd();
 }
+
+t[#t+1] = Def.ActorFrame{
+	InitCommand=cmd(draworder,1);
+	StandardDecorationFromFileOptional("StageFrame","StageFrame");
+	StandardDecorationFromFileOptional("StageDisplay","StageDisplay");
+	StandardDecorationFromFileOptional("SongTitle","SongTitle");
+};
+
 
 return t

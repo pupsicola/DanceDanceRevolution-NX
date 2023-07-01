@@ -266,7 +266,7 @@ function LoadPlayerStuff(Player)
 		Name = 'selectedHonorPic';
 		InitCommand=cmd(x,0;y,-92;zoom,0.32;);
 		OnCommand=cmd(sleep,0.9;linear,0.25;diffusealpha,1;);
-		OffCommand=cmd(stoptweening;linear,0.25;zoom,0;);
+		OffCommand=cmd(stoptweening;linear,0.25;diffusealpha,0;);
 	};
 	
 	t[#t+1] = LoadActor( THEME:GetPathG("ScreenSelectProfile","LvBar") ) .. {

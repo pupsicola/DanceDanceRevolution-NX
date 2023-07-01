@@ -313,6 +313,14 @@ t[#t+1]=Def.ActorFrame{
 			end;
 };	
 
+	LoadFont("Common Normal") .. {
+	Text=GAMESTATE:GetCurrentSteps(PLAYER_1):GetMeter();
+	InitCommand=cmd(maxwidth,240;shadowlengthy,2;zoom,0.75;y,-25;horizalign,center;);
+		OnCommand=function(self)
+			(cmd(x,-113+140))(self);
+		end;
+	};
+
 LoadFont("Common Normal") .. {
 	Text=PROFILEMAN:GetProfile(PLAYER_1):GetDisplayName();
 	InitCommand=cmd(shadowlengthy,2;maxwidth,300;zoom,0.75;y,45;horizalign,center;);
@@ -320,6 +328,7 @@ LoadFont("Common Normal") .. {
 		(cmd(x,-113+110))(self);
 	end;
 };
+
 
 
 
@@ -336,9 +345,9 @@ if not GAMESTATE:IsCourseMode() then --Difficulty
 	if GAMESTATE:IsPlayerEnabled(PLAYER_1) then
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Text=THEME:GetString("CustomDifficulty",ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()));
-		InitCommand=cmd(maxwidth,240;shadowlengthy,2;zoom,0.75;y,-25;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
+		InitCommand=cmd(maxwidth,80;shadowlengthy,2;zoom,0.75;y,-25;horizalign,center;diffuse,CustomDifficultyToColor( ToEnumShortString(GAMESTATE:GetCurrentSteps(PLAYER_1):GetDifficulty()) ));
 		OnCommand=function(self)
-			(cmd(x,-125+120))(self);
+			(cmd(x,-125+105))(self);
 		end;
 	};
 
@@ -355,6 +364,7 @@ else
 			(cmd(x,-125))(self);
 		end;
 	};
+
 
 	end;
 
