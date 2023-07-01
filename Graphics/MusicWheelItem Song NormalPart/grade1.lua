@@ -148,7 +148,7 @@ local function setGradeP1(self,param)
 
 		end
   	else
-		self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/lamp/ClearedMark","MFC"));
+		self:LoadBackground(THEME:GetPathG("MusicWheelItem Song NormalPart/ClearedMark","MFC"));
   		(cmd(diffuseshift;effectcolor1,1,1,1,0;effectcolor2,1,1,1,0;effectperiod,0.1))(self);
   	end;
   end;
