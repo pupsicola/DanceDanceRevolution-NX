@@ -18,6 +18,26 @@ t[#t+1] = Def.ActorFrame{
 
 };
 
+		t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X-4 or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX")-4;y,SCREEN_TOP+25;);
+		Def.ActorFrame{
+			HealthStateChangedMessageCommand=function(self, param)
+				if param.PlayerNumber == PLAYER_1 then
+					if param.HealthState == "HealthState_Hot" then
+						self:RunCommandsOnChildren(cmd(playcommand,"Show"))
+					else
+						self:RunCommandsOnChildren(cmd(playcommand,"Hide"))
+					end
+				end
+			end;
+			LoadActor("bubbles")..{
+			InitCommand=cmd(diffusealpha,0;zoom,0.53;cropbottom,0.28;croptop,0.4;blend,'BlendMode_Add';texcoordvelocity,0,0.5;);
+			ShowCommand=cmd(diffusealpha,0.5;);
+			HideCommand=cmd(diffusealpha,0;);
+		};
+		};
+		};
+
 t[#t+1] = Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "NX");
 		LoadActor("frame")..{

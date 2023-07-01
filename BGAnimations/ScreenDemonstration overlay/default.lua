@@ -18,6 +18,28 @@ t[#t+1] = Def.ActorFrame{
 
 };
 
+		t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X-4 or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX")-4;y,SCREEN_TOP+25;);
+		Def.ActorFrame{
+			HealthStateChangedMessageCommand=function(self, param)
+				if param.PlayerNumber == PLAYER_1 then
+					if param.HealthState == "HealthState_Hot" then
+						self:RunCommandsOnChildren(cmd(playcommand,"Show"))
+					else
+						self:RunCommandsOnChildren(cmd(playcommand,"Hide"))
+					end
+				end
+			end;
+			LoadActor("bubbles")..{
+			InitCommand=cmd(diffusealpha,0;zoom,0.53;cropbottom,0.28;croptop,0.4;blend,'BlendMode_Add';texcoordvelocity,0,0.5;);
+			ShowCommand=cmd(diffusealpha,0.5;);
+			HideCommand=cmd(diffusealpha,0;);
+		};
+		};
+		};
+
+
+
 t[#t+1] = Def.ActorFrame{
 		InitCommand=cmd(visible,ThemePrefs.Get("FrameStyle") == "NX");
 		LoadActor("frame")..{
@@ -90,9 +112,10 @@ end;
 t[#t+1] = LoadActor("OniGameOverDisplay");
 
 
+
 t[#t+1] = Def.ActorFrame{
 		Def.ActorFrame{
-			InitCommand=cmd(x,SCREEN_CENTER_X;y,661+18;zoom,0.42);
+			InitCommand=cmd(x,SCREEN_CENTER_X;y,661+18;zoom,0.35);
 			LoadActor("bg")..{
 			};
 		};
@@ -100,8 +123,10 @@ t[#t+1] = Def.ActorFrame{
 
 t[#t+1] = LoadFont("_@fot-newrodin pro db 30px")..{
 		Text="Press Start";
-		InitCommand=cmd(horizalign,center;shadowlengthy,2;x,SCREEN_CENTER_X;zoom,0.75;y,661+20;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.01,1.0;effectoffset,0.5;);
+		InitCommand=cmd(horizalign,center;shadowlengthy,2;x,SCREEN_CENTER_X;zoom,0.6;y,661+20;heartbeat;effectclock,'beat';effectmagnitude,1.0,1.05,1.0;);
 				OffCommand=cmd(linear,0.25;diffusealpha,0;);
 	 };
+	 
+
 	 
 return t

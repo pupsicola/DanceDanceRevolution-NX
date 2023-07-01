@@ -225,7 +225,7 @@ local function DrawDifList(pn,diff)
 			Def.Quad{
 			InitCommand=cmd(shadowlengthy,2;zoom,0.30;cropright,0.01;);
 			BeginCommand=cmd(playcommand,"Set");
-			OffCommand=cmd();
+			OffCommand=cmd(linear,0.25;diffusealpha,0;);
 			SetCommand=function(self)
 				local st=GAMESTATE:GetCurrentStyle():GetStepsType();
 				
@@ -439,7 +439,6 @@ t[#t+1] = Def.ActorFrame {
 t[#t+1]=LoadActor("songtitlebg")..{
 	
 	OnCommand=cmd(draworder,-500;x,SCREEN_CENTER_X+100;y,SCREEN_CENTER_Y;zoom,0.667;diffusealpha,0;linear,0.25;diffusealpha,1;x,SCREEN_CENTER_X;);
-	OffCommand=cmd(linear,0.5;diffusealpha,0;x,SCREEN_CENTER_X+100;);
 	};
 
 t[#t+1] = Def.ActorFrame{
@@ -459,7 +458,7 @@ t[#t+1] = Def.BitmapText {
 			self:settext("Song Length:            BPM:")
 			end;	
 			BeginCommand=cmd(playcommand,"Set");
-			OffCommand=cmd(decelerate,0.05;diffusealpha,0;);
+			OffCommand=cmd(decelerate,0.25;diffusealpha,0;);
 			SetCommand=function(self)
 				self:diffuse(color("1,1,1,1"));
 				self:strokecolor(color("0.1,0.1,0.3,1"));
@@ -490,7 +489,7 @@ t[#t+1] = StandardDecorationFromFileOptional("ShockArrowDisplayP1","ShockArrowDi
 
 t[#t+1] = StandardDecorationFromFileOptional("SongTime","SongTime") .. {
 	InitCommand = cmd(x,SCREEN_CENTER_X-240;y,SCREEN_CENTER_Y-141;zoom,0.5;);
-	OffCommand = cmd(linear,0.25;diffusealpha,0;);
+	OffCommand = cmd(diffusealpha,0;);
 	SetCommand=function(self)
 		local curSelection = nil;
 		local length = 0.0;
