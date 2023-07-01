@@ -8,6 +8,4 @@ This theme is still a work in progress!
 
 As of now and probably for a while going forward, the theme only supports single play event mode. 2 player and doubles might be implemented in the future but it would probably take a while as everything so far has been tailored towards a single player, single pad experience.
 
-There is a decent amount of polish I'd still like to add. Please let me know of anything that irks you, things you'd want added if possible, or anything that seems out of place or needs tidying/polish.
-
 Thank you for trying out DanceDanceRevolution NX!
