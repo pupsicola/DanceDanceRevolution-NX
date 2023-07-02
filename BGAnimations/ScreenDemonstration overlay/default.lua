@@ -1,6 +1,12 @@
 local t = Def.ActorFrame {};
 
 
+t[#t+1] = Def.ActorFrame{
+		InitCommand=cmd(x,Center1Player() and SCREEN_CENTER_X-4 or THEME:GetMetric(Var "LoadingScreen","PlayerP1OnePlayerOneSideX")-4;y,SCREEN_TOP+55;);
+	Def.Quad {
+		InitCommand=cmd(zoomto,426,10;diffusealpha,1;diffuse,color("0,0,0,1"););
+	};
+};
 
 t[#t+1] = Def.ActorFrame{
 	Def.ActorFrame{
@@ -32,7 +38,7 @@ t[#t+1] = Def.ActorFrame{
 			end;
 			LoadActor("bubbles")..{
 			InitCommand=cmd(diffusealpha,0;zoom,0.53;cropbottom,0.28;croptop,0.4;blend,'BlendMode_Add';texcoordvelocity,0,0.5;);
-			ShowCommand=cmd(diffusealpha,0.5;);
+			ShowCommand=cmd(diffusealpha,1;);
 			HideCommand=cmd(diffusealpha,0;);
 		};
 		};
