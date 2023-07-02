@@ -13,6 +13,23 @@ t[#t+1] = Def.ActorFrame {
 		};
 		
 		Def.ActorFrame{
+			HealthStateChangedMessageCommand=function(self, param)
+				if param.PlayerNumber == PLAYER_1 then
+					if param.HealthState == "HealthState_Hot" then
+						self:RunCommandsOnChildren(cmd(playcommand,"Show"))
+					else
+						self:RunCommandsOnChildren(cmd(playcommand,"Hide"))
+					end
+				end
+			end;
+			LoadActor("jacket") .. {
+				InitCommand=cmd(Center;zoom,2.665;diffusealpha,0;);
+				ShowCommand=cmd(diffusealpha,0.5;decelerate,1;zoom,3.25;diffusealpha,0);
+				HideCommand=cmd(diffusealpha,0);
+		};
+		};
+		
+		Def.ActorFrame{
 		Def.ActorFrame{
 			HealthStateChangedMessageCommand=function(self, param)
 				if param.PlayerNumber == PLAYER_1 then
