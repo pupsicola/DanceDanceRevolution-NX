@@ -24,8 +24,8 @@ t[#t+1] = Def.ActorFrame {
 			end;
 			LoadActor("jacket") .. {
 				InitCommand=cmd(Center;zoom,2.665;diffusealpha,0;);
-				ShowCommand=cmd(diffusealpha,0.5;decelerate,1;zoom,3.25;diffusealpha,0);
-				HideCommand=cmd(diffusealpha,0);
+				ShowCommand=cmd(diffusealpha,0.5;decelerate,1;zoom,3;diffusealpha,0);
+				HideCommand=cmd(diffusealpha,0;zoom,2.665;);
 		};
 		};
 		
