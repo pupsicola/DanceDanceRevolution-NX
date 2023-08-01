@@ -61,7 +61,17 @@ GameColor = {
 		Difficulty_Challenge	= color("#eb1eff"),		-- purple
 		Difficulty_Edit 	= color("#afafaf"),		-- gray
 		Difficulty_Couple	= color("#ed0972"),				-- hot pink
-		Difficulty_Routine	= color("#ff9a00")				-- orange
+		Difficulty_Routine	= color("#ff9a00"),				-- orange
+
+		Difficulty_D7			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D8			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D9			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D10			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D11			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D12			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D13			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D14			= color("0.8,0.8,0.8,1"),	-- TODO
+		Difficulty_D15			= color("0.8,0.8,0.8,1"),	-- TODO
 	},
 	Stage = {
 		Stage_1st	= color("#00ffc7"),

@@ -60,7 +60,8 @@ t[#t+1] = Def.ActorFrame {
 		};
 		
 		LoadActor("spiral") .. {
-		InitCommand=cmd(fov,120);
+		-- Sprites cannot have FOVs. It has to be inside on an ActorFrame.
+		--InitCommand=cmd(fov,120);
 		OnCommand=cmd(Center;diffusealpha,0.05;rotationx,-45;blend,'BlendMode_Add';spin;effectmagnitude,0,0,5)
 		};
 		

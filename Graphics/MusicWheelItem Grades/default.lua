@@ -13,7 +13,7 @@ local grades = {
 };
 
 
-return t;
+return Def.ActorFrame{};
 
 -- (c) 2007 Glenn Maynard
 -- All rights reserved.
