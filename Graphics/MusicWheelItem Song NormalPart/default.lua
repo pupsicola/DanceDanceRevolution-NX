@@ -6,10 +6,12 @@ local group;
 --main backing
 
 local t = Def.ActorFrame {
-
-
-
-Def.Sprite {
+	-- Fallback banner in case one isn't available.
+	Def.Sprite {
+		Texture=THEME:GetPathG("Common", "fallback jacket"),
+		InitCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
+	},
+	Def.Sprite {
 		Name="BannerBG";
 		InitCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
 		BackgroundCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
@@ -20,32 +22,30 @@ Def.Sprite {
 			local Course = params.Course;
 			if Song then
 				if ( Song:GetJacketPath() ~=  nil ) and ( bAllowJackets ) then
-					self:Load( Song:GetJacketPath() );
+					self:visible(true):Load( Song:GetJacketPath() );
 					self:playcommand("Jacket");
 				elseif ( Song:GetBackgroundPath() ~= nil ) then
-					self:Load( Song:GetBackgroundPath() );
+					self:visible(true):LoadFromCached("banner",Song:GetBannerPath())
+					-- self:visible(true):Load( Song:GetBackgroundPath() );
 					self:playcommand("Background");
 				elseif ( Song:GetBannerPath() ~= nil ) and ( bAllowJackets ) then
-					self:Load( Song:GetBannerPath() );
+					self:visible(true):Load( Song:GetBannerPath() );
 					self:playcommand("Banner");
 				else
-				  self:Load( bAllowJackets and sBannerPath or sJacketPath );
-				  self:playcommand( bAllowJackets and "Jacket" or "Banner" );
+				  self:visible(false)
 				end;
 			elseif Course then
 				if ( Course:GetBackgroundPath() ~= nil ) and ( bAllowJackets ) then
-					self:Load( Course:GetBackgroundPath() );
+					self:visible(true):Load( Course:GetBackgroundPath() );
 					self:playcommand("Jacket");
 				elseif ( Course:GetBannerPath() ~= nil ) then
-					self:Load( Course:GetBannerPath() );
+					self:visible(true):Load( Course:GetBannerPath() );
 					self:playcommand("Banner");
 				else
-					self:Load( sJacketPath );
-					self:playcommand( bAllowJackets and "Jacket" or "Banner" );
+					self:visible(false)
 				end
 			else
-				self:Load( bAllowJackets and sJacketPath or sBannerPath );
-				self:playcommand( bAllowJackets and "Jacket" or "Banner" );
+				self:visible(false)
 			end;
 		end;
 	};
