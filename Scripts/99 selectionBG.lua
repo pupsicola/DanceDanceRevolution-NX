@@ -1,7 +1,12 @@
 --[[
     TODO: This is way too expensive to run four times on every single wheel item.
 ]]
-function LoadFromSelectionBG(self, group, so)
+
+NXCachedGroupAreas = {}
+
+function LoadFromSelectionBG(group, so)
+	local selectedGroupFile = SONGMAN:GetSongGroupBannerPath(group)
+    -- local GradesRegexMatch = 
     local shortcutNames = {
         -- BPMS
         ['000-019'] = {'bpm',"000"},
@@ -87,174 +92,176 @@ function LoadFromSelectionBG(self, group, so)
     }
 	if so =="SortOrder_Genre" then
 		if group == "Pop" or group == "POP"  or group == "Pop" then
-			self:Load(THEME:GetPathG("group jacket","Pop"));
+			selectedGroupFile = THEME:GetPathG("group jacket","Pop")
 		elseif group == "Anime/Game"  or group == "AnimeGame"  or group == "Anime"  or group == "Game" then
-			self:Load(THEME:GetPathG("group jacket","AnimeGame"));
+			selectedGroupFile = THEME:GetPathG("group jacket","AnimeGame")
 		elseif group == "Variety" then
-			self:Load(THEME:GetPathG("group jacket","Variety"));
+			selectedGroupFile = THEME:GetPathG("group jacket","Variety")
 		elseif group == "GUMI 5th anniversary"  or group == "GUMI" then
-			self:Load(THEME:GetPathG("group jacket","GUMI"));
+			selectedGroupFile = THEME:GetPathG("group jacket","GUMI")
 		elseif group == "U.M.U. x BEMANI" or group == "UMU" then
-			self:Load(THEME:GetPathG("group jacket","UMU"));
+			selectedGroupFile = THEME:GetPathG("group jacket","UMU")
 		elseif group == "KONAMI originals" or group == "KONAMI" then
-			self:Load(THEME:GetPathG("group jacket","KONAMI"));	
+			selectedGroupFile = THEME:GetPathG("group jacket","KONAMI")
 			
 		elseif group == "beatmania IIDX" or group == "beatmaniaIIDX" then
-			self:Load(THEME:GetPathG("group jacket series","IIDX"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","IIDX")
 		elseif group == "pop'n music" or group == "popn music" then
-			self:Load(THEME:GetPathG("group jacket series","popn"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","popn")
 		elseif group == "GITADORA" then
-			self:Load(THEME:GetPathG("group jacket series","GITADORA"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","GITADORA")
 		elseif group == "jubeat" then
-			self:Load(THEME:GetPathG("group jacket series","jubeat"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","jubeat")
 		elseif group == "REFLEC BEAT" then
-			self:Load(THEME:GetPathG("group jacket series","RB"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","RB")
 		elseif group == "Dance Evolution" then
-			self:Load(THEME:GetPathG("group jacket series","DanceEvolution"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","DanceEvolution")
 		elseif group == "SOUND VOLTEX" or group == "SDVX" then
-			self:Load(THEME:GetPathG("group jacket series","SDVX"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","SDVX")
 		elseif group == "FutureTomTom" then
-			self:Load(THEME:GetPathG("group jacket series","FutureTomTom"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","FutureTomTom")
 		elseif group == "DDR" then
-			self:Load(THEME:GetPathG("group jacket series","DDR"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","DDR")
 		elseif group == "BEMANI Academy" then
-			self:Load(THEME:GetPathG("group jacket series","BEMANI Academy"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","BEMANI Academy")
 		elseif group == "BEMANI STADIUM" or group == "BEMANI Stadium" then
-			self:Load(THEME:GetPathG("group jacket series","BEMANI STADIUM"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","BEMANI STADIUM")
 		elseif group == "HinaBitter" then
-			self:Load(THEME:GetPathG("group jacket series","HinaBitter"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","HinaBitter")
 		elseif group == "BEMANI x TOHO project" or group == "BEMANI x TOHO" then
-			self:Load(THEME:GetPathG("group jacket series","BEMANI x TOHO project"));
+			selectedGroupFile = THEME:GetPathG("group jacket series","BEMANI x TOHO project")
 		elseif group == "Dancemania" then
-			self:Load(THEME:GetPathG("group jacket series","Dancemania"));	
+			selectedGroupFile = THEME:GetPathG("group jacket series","Dancemania")
 		elseif group == "Electronic" or group == "Electronics" then
-			self:Load(THEME:GetPathG("group jacket series","Electronic"));	
+			selectedGroupFile = THEME:GetPathG("group jacket series","Electronic")
 		elseif group=='N/A' or group=='- EMPTY -'then
-			self:Load(THEME:GetPathG("group global","NA"));
+			selectedGroupFile = THEME:GetPathG("group global","NA")
 		elseif FILEMAN:DoesFileExist("Themes/Genres/"..group..".png") then
-			self:LoadBackground(THEME:GetPathG("","../../Genres/"..group..".png"));
+			selectedGroupFile = THEME:GetPathG("","../../Genres/"..group..".png")
 		elseif FILEMAN:DoesFileExist("Themes/Genres/"..group..".jpg") then
-			self:LoadBackground(THEME:GetPathG("","../../Genres/"..group..".jpg"));
+			selectedGroupFile = THEME:GetPathG("","../../Genres/"..group..".jpg")
 		else
-			self:Load( THEME:GetPathG("group jacket","NA") );
+			selectedGroupFile = THEME:GetPathG("group jacket","NA") 
 		end
 	elseif string.find(so,"Meter") then
 		if group=='01' then
-			self:Load(THEME:GetPathG("group diff","01"));
+			selectedGroupFile = THEME:GetPathG("group diff","01")
 		elseif group=='02' then
-			self:Load(THEME:GetPathG("group diff","02"));
+			selectedGroupFile = THEME:GetPathG("group diff","02")
 		elseif group=='03' then
-			self:Load(THEME:GetPathG("group diff","03"));
+			selectedGroupFile = THEME:GetPathG("group diff","03")
 		elseif group=='04' then
-			self:Load(THEME:GetPathG("group diff","04"));
+			selectedGroupFile = THEME:GetPathG("group diff","04")
 		elseif group=='05' then
-			self:Load(THEME:GetPathG("group diff","05"));
+			selectedGroupFile = THEME:GetPathG("group diff","05")
 		elseif group=='06' then
-			self:Load(THEME:GetPathG("group diff","06"));
+			selectedGroupFile = THEME:GetPathG("group diff","06")
 		elseif group=='07' then
-			self:Load(THEME:GetPathG("group diff","07"));
+			selectedGroupFile = THEME:GetPathG("group diff","07")
 		elseif group=='08' then
-			self:Load(THEME:GetPathG("group diff","08"));
+			selectedGroupFile = THEME:GetPathG("group diff","08")
 		elseif group=='09' then
-			self:Load(THEME:GetPathG("group diff","09"));
+			selectedGroupFile = THEME:GetPathG("group diff","09")
 		elseif group=='10' then
-			self:Load(THEME:GetPathG("group diff","10"));
+			selectedGroupFile = THEME:GetPathG("group diff","10")
 		elseif group=='11' then
-			self:Load(THEME:GetPathG("group diff","11"));
+			selectedGroupFile = THEME:GetPathG("group diff","11")
 		elseif group=='12' then
-			self:Load(THEME:GetPathG("group diff","12"));
+			selectedGroupFile = THEME:GetPathG("group diff","12")
 		elseif group=='13' then
-			self:Load(THEME:GetPathG("group diff","13"));
+			selectedGroupFile = THEME:GetPathG("group diff","13")
 		elseif group=='14' then
-			self:Load(THEME:GetPathG("group diff","14"));
+			selectedGroupFile = THEME:GetPathG("group diff","14")
 		elseif group=='15' then
-			self:Load(THEME:GetPathG("group diff","15"));
+			selectedGroupFile = THEME:GetPathG("group diff","15")
 		elseif group=='16' then
-			self:Load(THEME:GetPathG("group diff","16"));
+			selectedGroupFile = THEME:GetPathG("group diff","16")
 		elseif group=='17' then
-			self:Load(THEME:GetPathG("group diff","17"));
+			selectedGroupFile = THEME:GetPathG("group diff","17")
 		elseif group=='18' then
-			self:Load(THEME:GetPathG("group diff","18"));
+			selectedGroupFile = THEME:GetPathG("group diff","18")
 		elseif group=='19' then
-			self:Load(THEME:GetPathG("group diff","19"));
+			selectedGroupFile = THEME:GetPathG("group diff","19")
 		elseif group=='20' then
-			self:Load(THEME:GetPathG("group diff","20"));
+			selectedGroupFile = THEME:GetPathG("group diff","20")
 		else
-			self:Load( THEME:GetPathG("group diff","NA") );
+			selectedGroupFile =  THEME:GetPathG("group diff","NA") 
 		end
 	else
 			
         local matchGroup = shortcutNames[group]
 		if matchGroup then
-            self:Load(THEME:GetPathG("group ".. matchGroup[1],matchGroup[2]))
-			
+            selectedGroupFile = THEME:GetPathG("group ".. matchGroup[1],matchGroup[2])
         -- TODO: Could be optimized with some regex
 		elseif group=="AAAA x 9" or group=="AAAA x 8" or group=="AAAA x 7" or group=="AAAA x 6" or group=="AAAA x 5" or group=="AAAA x 4" or group=="AAAA x 3" or group=="AAAA x 2" or group=="AAAA x 1" then
-			self:Load(THEME:GetPathG("group grade","3A"));
+			selectedGroupFile = THEME:GetPathG("group grade","3A")
 		elseif group==" AAA x 9" or group==" AAA x 8" or group==" AAA x 7" or group==" AAA x 6" or group==" AAA x 5" or group==" AAA x 4" or group==" AAA x 3" or group==" AAA x 2" or group==" AAA x 1" then
-			self:Load(THEME:GetPathG("group grade","2A"));
+			selectedGroupFile = THEME:GetPathG("group grade","2A")
 		elseif group=="  AA x 9" or group=="  AA x 8" or group=="  AA x 7" or group=="  AA x 6" or group=="  AA x 5" or group=="  AA x 4" or group=="  AA x 3" or group=="  AA x 2" or group=="  AA x 1" then
-			self:Load(THEME:GetPathG("group grade","A"));
+			selectedGroupFile = THEME:GetPathG("group grade","A")
 		elseif group=="   A x 9" or group=="   A x 8" or group=="   A x 7" or group=="   A x 6" or group=="   A x 5" or group=="   A x 4" or group=="   A x 3" or group=="   A x 2" or group=="   A x 1" then
-			self:Load(THEME:GetPathG("group grade","B"));
+			selectedGroupFile = THEME:GetPathG("group grade","B")
 		elseif group=="   B x 9" or group=="   B x 8" or group=="   B x 7" or group=="   B x 6" or group=="   B x 5" or group=="   B x 4" or group=="   B x 3" or group=="   B x 2" or group=="   B x 1" then
-			self:Load(THEME:GetPathG("group grade","C"));
+			selectedGroupFile = THEME:GetPathG("group grade","C")
 		elseif group=="   C x 9" or group=="   C x 8" or group=="   C x 7" or group=="   C x 6" or group=="   C x 5" or group=="   C x 4" or group=="   C x 3" or group=="   C x 2" or group=="   C x 1" then
-			self:Load(THEME:GetPathG("group grade","D"));
+			selectedGroupFile = THEME:GetPathG("group grade","D")
 		elseif group=="   D x 9" or group=="   D x 8" or group=="   D x 7" or group=="   D x 6" or group=="   D x 5" or group=="   D x 4" or group=="   D x 3" or group=="   D x 2" or group=="   D x 1" then
-			self:Load(THEME:GetPathG("group grade","D"));
+			selectedGroupFile = THEME:GetPathG("group grade","D")
 			
 			
 		elseif group=="???" then
 			if so == "SortOrder_TopGrades" then
-			self:Load(THEME:GetPathG("group cleared rank","unplayed"));
+				selectedGroupFile = THEME:GetPathG("group cleared rank","unplayed")
 			end;
 		elseif group=='N/A' or group=='- EMPTY -'then
-			self:Load(THEME:GetPathG("group global","NA"));	
+			selectedGroupFile = THEME:GetPathG("group global","NA")
 		
 		elseif group=='Nonstop'then
-			self:Load(THEME:GetPathG("group COURSE","NORMAL"));
+			selectedGroupFile = THEME:GetPathG("group COURSE","NORMAL")
 		elseif group=='Oni'then
-			self:Load(THEME:GetPathG("group COURSE","CHALLENGE"));
+			selectedGroupFile = THEME:GetPathG("group COURSE","CHALLENGE")
 		
 		elseif group=='DanceDanceRevolution 1stMIX' or group=='01 - DDR 1st' then
-		    self:Load(THEME:GetPathG("group","001 DDR"));
+		    selectedGroupFile = THEME:GetPathG("group","001 DDR")
 		elseif group=='DanceDanceRevolution 2ndMIX' or group=='02 - DDR 2ndMIX' then
-		    self:Load(THEME:GetPathG("group","002 DDR 2ndMIX"));
+		    selectedGroupFile = THEME:GetPathG("group","002 DDR 2ndMIX")
 		elseif group=='DanceDanceRevolution 3rdMIX' or group=='03 - DDR 3rdMIX' then
-		    self:Load(THEME:GetPathG("group","003 DDR 3rdMIX"));
+		    selectedGroupFile = THEME:GetPathG("group","003 DDR 3rdMIX")
 		elseif group=='DanceDanceRevolution 4thMIX' or group=='04 - DDR 4thMIX'  then
-            self:Load(THEME:GetPathG("group","004 DDR 4thMIX"));	
+            selectedGroupFile = THEME:GetPathG("group","004 DDR 4thMIX")
 		elseif group=='DanceDanceRevolution 5thMIX' or group=='05 - DDR 5thMIX'  then
-		    self:Load(THEME:GetPathG("group","005 DDR 5thMIX"));	
+		    selectedGroupFile = THEME:GetPathG("group","005 DDR 5thMIX")
 		elseif group=='DanceDanceRevolution 6thMIX MAX' or group=='06 - DDR MAX'  then
-		    self:Load(THEME:GetPathG("group","006 DDRMAX"));	
+		    selectedGroupFile = THEME:GetPathG("group","006 DDRMAX")
 		elseif group=='DanceDanceRevolution 7thMIX MAX2' or group=='07 - DDR MAX2'  then
-		    self:Load(THEME:GetPathG("group","007 DDRMAX2"));	
+		    selectedGroupFile = THEME:GetPathG("group","007 DDRMAX2")
 		elseif group=='DanceDanceRevolution 8thMIX EXTREME' or group=='08 - DDR EXTREME'  then
-		    self:Load(THEME:GetPathG("group","008 DDR EXTREME"));	
+		    selectedGroupFile = THEME:GetPathG("group","008 DDR EXTREME")
 		elseif group=='DanceDanceRevolution SuperNOVA' or group=='09 - DDR SuperNOVA'  then
-		    self:Load(THEME:GetPathG("group","009 DDR SuperNOVA"));
+		    selectedGroupFile = THEME:GetPathG("group","009 DDR SuperNOVA")
 		elseif group=='DanceDanceRevolution SuperNOVA2' or group=='10 - DDR SuperNOVA2'  then
-		    self:Load(THEME:GetPathG("group","010 DDR SuperNOVA2"));
+		    selectedGroupFile = THEME:GetPathG("group","010 DDR SuperNOVA2")
 		elseif group=='DanceDanceRevolution X' or group=='11 - DDR X'  then
-		    self:Load(THEME:GetPathG("group","011 DDR X"));
+		    selectedGroupFile = THEME:GetPathG("group","011 DDR X")
 		elseif group=='DanceDanceRevolution X2' or group=='12 - DDR X2'  then		
-		    self:Load(THEME:GetPathG("group","012 DDR X2"));
+		    selectedGroupFile = THEME:GetPathG("group","012 DDR X2")
 		elseif group=='DanceDanceRevolution X3' or group=='13 - DDR X3 vs 2ndMIX'  then
-		    self:Load(THEME:GetPathG("group","013 DDR X3 vs 2ndMIX"));
+		    selectedGroupFile = THEME:GetPathG("group","013 DDR X3 vs 2ndMIX")
 		elseif group=='DDR 2013' or group=='14 - DDR 2013'  then
-		    self:Load(THEME:GetPathG("group","014 DDR 2013"));
+		    selectedGroupFile = THEME:GetPathG("group","014 DDR 2013")
 		elseif group=='DDR 2014' or group=='15 - DDR 2014'  then
-		    self:Load(THEME:GetPathG("group","015 DDR 2014"));
-		else
-            -- It's a group, Check if it has a banner.
-            local bannerPath = SONGMAN:GetSongGroupBannerPath(group)
-            self:visible( bannerPath ~= "" )
-            if bannerPath ~= "" then
-                -- It does, Load it.
-                self:LoadFromCached("banner",bannerPath)
-            end
+		    selectedGroupFile = THEME:GetPathG("group","015 DDR 2014")
 		end
 	end
+
+	if selectedGroupFile == "" then
+		selectedGroupFile = THEME:GetPathG("","_No banner")
+	end
+
+	return selectedGroupFile
+end
+
+-- Generate the group banner data.
+for _,group in ipairs(SONGMAN:GetSongGroupNames()) do
+	NXCachedGroupAreas[group] = LoadFromSelectionBG(group,"")
 end

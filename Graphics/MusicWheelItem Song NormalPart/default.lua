@@ -25,11 +25,11 @@ local t = Def.ActorFrame {
 					self:visible(true):Load( Song:GetJacketPath() );
 					self:playcommand("Jacket");
 				elseif ( Song:GetBackgroundPath() ~= nil ) then
-					self:visible(true):LoadFromCached("banner",Song:GetBannerPath())
+					self:visible(true):LoadFromCached("background",Song:GetBackgroundPath())
 					-- self:visible(true):Load( Song:GetBackgroundPath() );
 					self:playcommand("Background");
 				elseif ( Song:GetBannerPath() ~= nil ) and ( bAllowJackets ) then
-					self:visible(true):Load( Song:GetBannerPath() );
+					self:visible(true):LoadFromCached("banner", Song:GetBannerPath() );
 					self:playcommand("Banner");
 				else
 				  self:visible(false)
