@@ -373,7 +373,7 @@ t[#t+1] = Def.ActorFrame {
 						self:fadeleft(0.5);
 					elseif song:HasBackground() then
 						self:diffusealpha(1);
-						self:LoadFromSongBackground(GAMESTATE:GetCurrentSong());
+						self:LoadFromCached("background",song:GetBackgroundPath())
 						self:zoomtowidth(130);
 						self:zoomtoheight(130);	
 						self:croptop(0.274);
@@ -585,7 +585,7 @@ t[#t+1] = Def.ActorFrame { --song jacket
 						self:zoomtoheight(130);					
 					elseif song:HasBackground() then
 						self:diffusealpha(1);
-						self:LoadFromSongBackground(GAMESTATE:GetCurrentSong());
+						self:LoadFromCached("background",song:GetBackgroundPath())
 						self:zoomtowidth(130);
 						self:zoomtoheight(130);							
 					else

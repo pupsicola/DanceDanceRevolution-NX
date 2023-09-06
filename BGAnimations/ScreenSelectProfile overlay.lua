@@ -308,7 +308,7 @@ function LoadPlayerStuff(Player)
 	};
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Name = 'SPLVTitle';
-		InitCommand=cmd(x,5;y,-67;zoom,0;diffuse,color("#12cff2");strokecolor,Color("#12cff2");horizalign,left);
+		InitCommand=cmd(x,5;y,-67;zoom,0;diffuse,color("#12cff2");strokecolor,color("#12cff2");horizalign,left);
 		OnCommand=function(self)
 			self:settext("SP");
 			(cmd(sleep,0.9;linear,0.25;diffusealpha,1;zoom,0;))(self);
@@ -317,7 +317,7 @@ function LoadPlayerStuff(Player)
 	};
 	t[#t+1]=LoadFont("Common Normal") .. {
 		Name = 'DPLVTitle';
-		InitCommand=cmd(x,68;y,-67;zoom,0;diffuse,color("#f253ed");strokecolor,Color("#f253ed");horizalign,left);
+		InitCommand=cmd(x,68;y,-67;zoom,0;diffuse,color("#f253ed");strokecolor,color("#f253ed");horizalign,left);
 		OnCommand=function(self)
 			self:settext("DP");
 			(cmd(sleep,0.9;linear,0.25;diffusealpha,1;zoom,0;))(self);
@@ -546,6 +546,9 @@ end;
 function UpdateInternal3(self, Player)
 	local pn = (Player == PLAYER_1) and 1 or 2;
 	local frame = self:GetChild(string.format('P%uFrame', pn));
+
+	-- Don't update if the frame is non-existant.
+	if not frame then return end
 	
 	local scroller = frame:GetChild('Scroller');
 	local seltext = frame:GetChild('SelectedProfileText');

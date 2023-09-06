@@ -24,7 +24,17 @@ t[#t+1] = Def.ActorFrame {
 	-- LoadActor("_Background");
 };
 --
-for idx,diff in pairs(Difficulty) do
+
+-- Set a fixed list of difficulties to go through.
+local DiffList = {
+	"Difficulty_Beginner",
+	"Difficulty_Easy",
+	"Difficulty_Medium",
+	"Difficulty_Hard",
+	"Difficulty_Challenge",
+	"Difficulty_Edit"
+}
+for idx,diff in pairs(DiffList) do
 	local sDifficulty = ToEnumShortString( diff );
 	local eachHeight = 23;
 	local tLocation = {
@@ -35,6 +45,10 @@ for idx,diff in pairs(Difficulty) do
 		Challenge	= eachHeight*3.64,
 		Edit 		= eachHeight*4.56,
 	};
+	-- Outfox note:
+	-- There are 18 different difficulties available. So, if these are not defined in tLocation, it will fail.
+	-- So for now, prevent loading of those.
+	local diffLocationY = tLocation[sDifficulty] or tLocation["Edit"]
 	t[#t+1] = Def.ActorFrame {
 		SetCommand=function(self)
 			local c = self:GetChildren();
@@ -92,7 +106,7 @@ for idx,diff in pairs(Difficulty) do
 			Name="Meter";
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty ););
 			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "0.5,0.5,0.5,0.5"));
-			InitCommand=cmd(x,0-76;y,tLocation[sDifficulty]+1.3;shadowlengthy,2;zoom,0.44;);
+			InitCommand=cmd(x,0-76;y,diffLocationY+1.3;shadowlengthy,2;zoom,0.44;);
 			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,CustomDifficultyToColor( sDifficulty ));
 		};
 		
@@ -101,7 +115,7 @@ for idx,diff in pairs(Difficulty) do
 			Text=THEME:GetString("CustomDifficulty",ToEnumShortString(diff));
 			ShowCommand=cmd(stoptweening;linear,0.1;;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
 			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "0.5,0.5,0.5,0.5" );zoomx,0.40);
-			InitCommand=cmd(horizalign,left;x,0-70;y,tLocation[sDifficulty]+2;shadowlengthy,2;zoomx,0.40;zoomy,0.4);
+			InitCommand=cmd(horizalign,left;x,0-70;y,diffLocationY+2;shadowlengthy,2;zoomx,0.40;zoomy,0.4);
 			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
 		};
 
@@ -111,7 +125,7 @@ for idx,diff in pairs(Difficulty) do
 			Text="0";
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
 			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" ));
-			InitCommand=cmd(x,0-85;y,tLocation[sDifficulty]+2;shadowlengthy,2;zoom,0.45;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
+			InitCommand=cmd(x,0-85;y,diffLocationY+2;shadowlengthy,2;zoom,0.45;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
 			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,2;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
 		};
 		
@@ -175,7 +189,7 @@ for idx,diff in pairs(Difficulty) do
 			Name="Meter";
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty );zoomx,2.5);
 			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0.5");zoomx,0);
-			InitCommand=cmd(x,13-99410;y,tLocation[sDifficulty]+0.2;shadowlengthy,1;zoomy,0.45;zoomx,2.5);
+			InitCommand=cmd(x,13-99410;y,diffLocationY+0.2;shadowlengthy,1;zoomy,0.45;zoomx,2.5);
 			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,CustomDifficultyToColor( sDifficulty );zoomx,0);
 		};
 
@@ -186,7 +200,7 @@ for idx,diff in pairs(Difficulty) do
 			--ShowCommand=cmd(stoptweening;linear,0.1;diffuse,CustomDifficultyToColor( sDifficulty );strokecolor,CustomDifficultyToDarkColor(sDifficulty);zoomx,0.40);
 			ShowCommand=cmd(stoptweening;linear,0.1;;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
 			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" );zoomx,0.40);
-			InitCommand=cmd(horizalign,left;x,42+370+2-168;y,tLocation[sDifficulty];shadowlengthy,1;zoomx,0.40;zoomy,0.4);
+			InitCommand=cmd(horizalign,left;x,42+370+2-168;y,diffLocationY;shadowlengthy,1;zoomx,0.40;zoomy,0.4);
 			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color("1,1,1,1");strokecolor, color( "0,0,0,0" );zoomx,0.40);
 		};
 
@@ -197,7 +211,7 @@ for idx,diff in pairs(Difficulty) do
 			--ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "1,1,1,1" );strokecolor,CustomDifficultyToDarkColor(sDifficulty));
 			ShowCommand=cmd(stoptweening;linear,0.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
 			HideCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1;diffuse,color( "0.5,0.5,0.5,0.5" );strokecolor, color( "0.1,0.1,0.1,0.5" ));
-			InitCommand=cmd(x,-28+377-41.5;y,tLocation[sDifficulty]-7;shadowlengthy,1;zoomx,0.75;zoomy,0.8;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
+			InitCommand=cmd(x,-28+377-41.5;y,diffLocationY-7;shadowlengthy,1;zoomx,0.75;zoomy,0.8;strokecolor,CustomDifficultyToDarkColor(sDifficulty));
 			UnSelectCommand=cmd(stoptweening;decelerate,0.2;shadowlengthy,1.1;diffuse,color( "1,1,1,1" );strokecolor, color( "0,0,0,1" ));
 		};
 		
