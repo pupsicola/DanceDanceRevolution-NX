@@ -137,7 +137,7 @@ local function RadarItems(pn, size, center_color, category_colors, tween_type, t
 					local vert_y = math.sin(angle) * size * value/2
 					
 					if i==1 then
-						category_colors = {color("150,150,150,150.8"), color("0,0,0,0.8"), color("0,0,0,0.8"), color("0,0,0,0.8"), color("0,0,0,0.8")}
+						category_colors = {color("150,150,150,1"), color("150,150,150,1"), color("150,150,150,1"), color("150,150,150,1"), color("150,150,150,1")}
 					else
 						category_colors = cat_colors
 					end
@@ -154,7 +154,7 @@ local function RadarItems(pn, size, center_color, category_colors, tween_type, t
 	
 	for j=1, 5 do
 		t[#t+1] = Def.Quad {
-			InitCommand=function(s) s:valign(1):setsize(2,size):rotationz(-72*(j-1)):zoomy(0):diffuse(Alpha(Color.Black,0.77)) end,
+			InitCommand=function(s) s:valign(1):setsize(2,size):rotationz(-72*(j-1)):zoomy(0):diffuse(Alpha(Color.White,1)) end,
 			CurrentSongChangedMessageCommand=function(self)
 				self:playcommand('Set')
 			end;
