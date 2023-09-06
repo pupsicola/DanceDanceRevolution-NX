@@ -7,10 +7,10 @@ local group;
 
 local t = Def.ActorFrame {
 	-- Fallback banner in case one isn't available.
-	Def.Sprite {
-		Texture=THEME:GetPathG("Common", "fallback jacket"),
-		InitCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
-	},
+	-- Def.Sprite {
+		-- Texture=THEME:GetPathG("Common", "fallback jacket"),
+		-- InitCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);
+	-- },
 	Def.Sprite {
 		Name="BannerBG";
 		InitCommand=cmd(x,120;scaletoclipped,60,60;zoom,9;croptop,0.435;cropbottom,0.435;fadeleft,1;diffusealpha,0.35);

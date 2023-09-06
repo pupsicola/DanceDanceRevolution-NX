@@ -32,6 +32,13 @@ Def.Sprite {
 	LoadActor("MusicWheelItem SectionCollapsed NormalPart") .. {
 
 };
+
+
+	LoadActor("Folder")..{
+	InitCommand=cmd(scaletoclipped,60,60;x,-238;);
+
+};
+
 --banner
 
 Def.Sprite {

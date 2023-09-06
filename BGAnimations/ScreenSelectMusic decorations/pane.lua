@@ -654,6 +654,17 @@ t[#t+1]=LoadActor("_SSM_GrooveRadar")..{
 	end;
 	
 	};
+	
+--GrooveRadar by Razorblade (Obtained from XX--STARLiGHT--twopointzero) -Curilang
+
+for _,pn in pairs(GAMESTATE:GetEnabledPlayers()) do
+	t[#t+1] = create_ddr_groove_radar("radar",0,0,pn,120,color("0,0,0,0.5"),{color("0,0,0,0.5"),color("0,0,0,0.5"),color("0,0,0,0.5"),color("0,0,0,0.5"),color("0,0,0,0.5")}, "accelerate", 0.133)..{
+		InitCommand=function(s) s:xy(_screen.cx-504,_screen.cy+192) end,
+		OnCommand=function(s) s:diffusealpha(0):sleep(0.75):linear(0.25):diffusealpha(1) end,
+	};
+end
+
+--GrooveRadar by Razorblade (Obtained from XX--STARLiGHT--twopointzero) -Curilang
 
 t[#t+1]=LoadActor("_SSM_radarScanLine")..{
 		InitCommand=cmd(zoom,0.55;x,SCREEN_CENTER_X-69-435;y,SCREEN_CENTER_Y+207+7-22;diffusealpha,0;linear,0.5;diffusealpha,1;);	

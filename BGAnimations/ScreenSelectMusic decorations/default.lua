@@ -32,10 +32,7 @@ OnCommand=cmd(decelerate,0.8;addx,400;diffusealpha,1;addz,-100;bob;effectmagnitu
 OffCommand=cmd(decelerate,0.5;addx,-400;diffusealpha,0;addz,100;);
 };
 
-t[#t+1] = StandardDecorationFromFileOptional( "GrooveRadarP1_Default", "GrooveRadarP1_Default" )..{
-	InitCommand=cmd(x,SCREEN_CENTER_X-26-454;y,SCREEN_CENTER_Y+200;rotationx,-10;fov,90;zoom,0.3;diffusealpha,0;);
-	OnCommand=cmd(diffusealpha,0;sleep,1;linear,1;diffusealpha,1;);
-};
+
 
 t[#t+1] = Def.ActorFrame {
 	LoadActor(THEME:GetPathB("","_door/loading"))..{
